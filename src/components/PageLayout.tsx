@@ -3,6 +3,7 @@ import SahanLogo from "../assets/logo.svg";
 import { Helmet } from "react-helmet";
 import { OutboundLink } from "./Links";
 import { SocialButton } from "./SocialShareButtons";
+import classnames from "classnames";
 
 //@ts-ignore
 import "../styles/app.scss";
@@ -27,9 +28,19 @@ const byline = process.env.GATSBY_AUTHOR
   ? JSON.parse(process.env.GATSBY_AUTHOR)
   : ([] as any);
 
-const Header = () => {
+const Header: React.FC<{ isHomepage?: boolean }> = ({ isHomepage }) => {
+  console.log("isHomepage", isHomepage);
   return (
-    <nav className="nav has-color-background">
+    <nav
+      className={classnames(
+        `nav py-1`,
+        isHomepage
+          ? "has-transparent-background is-position-absolute"
+          : "has-color-background has-dotted-background",
+      )}
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="nav-container">
         <div className="nav-logo">
           <OutboundLink
@@ -51,7 +62,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="footer has-color-background">
+    <footer className="footer has-color-background has-dotted-background">
       <div
         className="container is-flex is-flex-direction-column is-align-items-center p-0"
         style={{ maxWidth: "750px" }}
@@ -188,7 +199,8 @@ type MetadataProps = {
 export const PageLayout: React.FC<{
   children: React.ReactNode;
   customMetadata?: MetadataProps;
-}> = ({ children, customMetadata }) => {
+  isHomepage?: boolean;
+}> = ({ children, customMetadata, isHomepage }) => {
   const slug = customMetadata?.slug || process.env.GATSBY_SLUG;
   const url = `${process.env.GATSBY_DOMAIN}${slug}/`;
   const favicon = `${process.env.GATSBY_DOMAIN}${process.env.GATSBY_SLUG}/favicon.ico`;
@@ -213,8 +225,8 @@ export const PageLayout: React.FC<{
   });
 
   return (
-    <article id="main" className="minneapolis-style">
-      <Header />
+    <article id="main" className="hennepin-style">
+      <Header isHomepage={isHomepage} />
       <Helmet>
         <title>{`${siteName}`}</title>
         <meta name="theme-color" content="#000000" />

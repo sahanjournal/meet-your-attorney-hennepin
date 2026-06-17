@@ -268,7 +268,7 @@ const Results: React.FC = () => {
         </div>
       )}
       <div
-        className="container has-color-background p-6 mb-6"
+        className="container has-color-background has-dotted-background p-6 mb-6"
         id="results"
         style={{ maxWidth: "1100px" }}
       >
