@@ -12,7 +12,7 @@ import { useAppStore } from "../useAppStore";
 import { getQuestionsLeftToAnswer } from "./Results";
 import { Link } from "gatsby";
 
-const MINNEAPOLIS_OPEN_ENDED_QUESTIONS = [
+const OPEN_ENDED_QUESTIONS = [
   "Why are you running for mayor?",
   "As mayor, how will you advocate for immigrants and communities of color?",
   "Should homeless encampments be allowed to exist in Minneapolis? When should the city clear homeless encampments?",
@@ -175,7 +175,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
         {[quote1, quote2, quote3, quote4, quote5, quote6].map((quote, i) => (
           <div className="copy my-2 py-2" key={i}>
             <h3 className="deck has-text-left mb-4 has-text-weight-semibold">
-              {MINNEAPOLIS_OPEN_ENDED_QUESTIONS[i]}
+              {OPEN_ENDED_QUESTIONS[i]}
             </h3>
             {formatContent(quote, true)}
           </div>

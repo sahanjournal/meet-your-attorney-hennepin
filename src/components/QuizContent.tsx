@@ -41,12 +41,12 @@ export const testCandidateContentFormat = () => {
       const noSpaceBeforeParenthesis = (value.match(/\S\(/) || []).length > 0;
       if (pipeCount > 2) {
         console.log(
-          `Too many pipes in Minneapolis candidate ${outerKey}.${innerKey}: "${value}"`,
+          `Too many pipes in candidate ${outerKey}.${innerKey}: "${value}"`,
         );
       }
       if (noSpaceBeforeParenthesis) {
         console.log(
-          `Improper parentesis spacing in Minneapolis candidate ${outerKey}.${innerKey}: "${value}"`,
+          `Improper parenthesis spacing in candidate ${outerKey}.${innerKey}: "${value}"`,
         );
       }
     }
