@@ -1,12 +1,10 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import { RequestStatus } from "./NewsletterSignup";
 import { ScoreCard } from "./QuizContent";
-import { City, getFullCityName, useCity } from "../utils";
 
 export const EmailMeMyResults: React.FC<{ topMatches: ScoreCard }> = ({
   topMatches,
 }) => {
-  const city = useCity();
   const [email, setEmail] = useState<string>("");
   const [status, setStatus] = useState<RequestStatus>("idle");
 
@@ -14,15 +12,15 @@ export const EmailMeMyResults: React.FC<{ topMatches: ScoreCard }> = ({
     .map(
       (match, i) =>
         `${i + 1}. ${match.candidateName} (${Math.round(
-          (match.totalScore / match.totalPossibleScore) * 100
-        )}% match)`
+          (match.totalScore / match.totalPossibleScore) * 100,
+        )}% match)`,
     )
     .join(", ");
 
   /**
    * Sign up for Sahan Journal's newsletter via direct API request.
    */
-  const submitSahan = async (e: FormEvent<HTMLFormElement>, city: City) => {
+  const submitSahan = async (e: FormEvent<HTMLFormElement>, city: string) => {
     e.preventDefault();
     setStatus("loading");
     try {
@@ -36,11 +34,9 @@ export const EmailMeMyResults: React.FC<{ topMatches: ScoreCard }> = ({
           body: JSON.stringify({
             email,
             city,
-            quizResults: `Here are your rankings for the ${getFullCityName(
-              city
-            )} mayoral race: ${topMatchesFormatted}`,
+            quizResults: `Here are your rankings for the mayoral race: ${topMatchesFormatted}`,
           }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -54,14 +50,13 @@ export const EmailMeMyResults: React.FC<{ topMatches: ScoreCard }> = ({
     }
   };
 
-  const handleSubmit =
-    (city: City) => async (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
+  const handleSubmit = () => async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-      setStatus("loading");
+    setStatus("loading");
 
-      submitSahan(e, city);
-    };
+    submitSahan(e, "minneapolis");
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -70,7 +65,7 @@ export const EmailMeMyResults: React.FC<{ topMatches: ScoreCard }> = ({
   return (
     <div>
       <form
-        onSubmit={handleSubmit(city)}
+        onSubmit={handleSubmit()}
         className="is-flex is-justify-content-center"
       >
         <div className="field">

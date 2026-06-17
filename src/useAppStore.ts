@@ -3,13 +3,12 @@ import { persist } from "zustand/middleware";
 import { QuizInput, ScoreCard } from "./components/QuizContent";
 import { questionContent } from "./question-content";
 import { track } from "@amplitude/analytics-browser";
-import { City, useCity } from "./utils";
 
 /**
  * A blank template to keep track of user's
  * responses to quiz questions.
  */
-export const createBlankAnswersList = (city: City) => {
+export const createBlankAnswersList = () => {
   return Object.entries(questionContent).map((question, i) => ({
     questionNumber: i + 1,
     answer: null,
@@ -42,18 +41,15 @@ type AppState = {
  * which essentially resets the quiz answers and other state to their defaults
  * for every user.
  */
-const CURRENT_APP_VERSION = {
-  minneapolis: 1,
-  "st-paul": 1,
-} as const;
+const CURRENT_APP_VERSION = 1;
 
 /**
  * Factory to create a city-specific store.
  * Ensures persistence and migration are scoped separately for each city.
  */
-function createAppStore(cityKey: City) {
-  const cityVersion = CURRENT_APP_VERSION[cityKey];
-  const blankAnswersList = createBlankAnswersList(cityKey);
+function createAppStore() {
+  const cityVersion = CURRENT_APP_VERSION;
+  const blankAnswersList = createBlankAnswersList();
   return create<AppState>()(
     persist<AppState>(
       (set) => ({
@@ -77,13 +73,10 @@ function createAppStore(cityKey: City) {
         },
       }),
       {
-        name: `app-store-${cityKey}`, // unique key per city
+        name: `app-store-hennepin`, // unique key per city
         version: cityVersion,
         migrate: (persistedState, version): AppState => {
-          console.log(
-            `Migrating AppState for ${cityKey} from version`,
-            version,
-          );
+          console.log(`Migrating AppState from version`, version);
 
           const state = persistedState as AppState;
 
@@ -105,27 +98,10 @@ function createAppStore(cityKey: City) {
   );
 }
 
-const useMinneapolisStore = createAppStore("minneapolis");
-const useStPaulStore = createAppStore("st-paul");
+const useStore = createAppStore();
 
 export function useAppStore<T>(selector: (state: AppState) => T) {
-  const city = useCity();
-  let store;
-
-  switch (city) {
-    case "minneapolis":
-      store = useMinneapolisStore;
-      break;
-    case "st-paul":
-      store = useStPaulStore;
-      break;
-    default:
-      console.error(
-        `[useAppStore] Unknown city: "${city}". Defaulting to Minneapolis store.`,
-      );
-      store = useMinneapolisStore;
-      break;
-  }
+  let store = useStore;
 
   return store(selector);
 }

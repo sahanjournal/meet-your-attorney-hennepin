@@ -2,7 +2,7 @@ import React from "react";
 import { generateListOfCandidates } from "./QuizContent";
 import classnames from "classnames";
 import { Bobblehead } from "./Illustration";
-import { useCity, useIsCandidatePage } from "../utils";
+import { useIsCandidatePage } from "../utils";
 import { track } from "@amplitude/analytics-browser";
 import { InternalLink } from "./Links";
 
@@ -10,8 +10,7 @@ import { InternalLink } from "./Links";
  * A menu of buttons that link to each candidate page.
  */
 export const CandidateSelectorMenu: React.FC = () => {
-  const city = useCity();
-  const candidates = generateListOfCandidates(city);
+  const candidates = generateListOfCandidates();
   const isCandidatePage = useIsCandidatePage();
   return (
     <div
@@ -20,7 +19,7 @@ export const CandidateSelectorMenu: React.FC = () => {
         "columns",
         "is-multiline",
         "is-mobile",
-        isCandidatePage ? "is-on-candidate-page" : "is-on-home-page"
+        isCandidatePage ? "is-on-candidate-page" : "is-on-home-page",
       )}
     >
       {candidates.map((candidate, i) => (
@@ -33,7 +32,7 @@ export const CandidateSelectorMenu: React.FC = () => {
                 isCandidatePage
                   ? "another candidate page"
                   : "bottom of main page"
-              }`
+              }`,
             )
           }
           className="column is-one-quarter"
@@ -54,7 +53,7 @@ export const CandidateSelectorMenu: React.FC = () => {
               className={classnames(
                 isCandidatePage ? "label" : "copy",
                 "has-text-centered",
-                "mt-2"
+                "mt-2",
               )}
               style={{
                 lineHeight: "1rem",

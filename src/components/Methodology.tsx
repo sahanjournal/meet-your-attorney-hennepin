@@ -1,17 +1,13 @@
 import React from "react";
 import { OutboundLink } from "./Links";
-import { useCity } from "../utils";
 import { Changelog } from "./Changelog";
 
 export const Methodology = () => {
-  const city = useCity();
   return (
     <div className="copy">
       <p className="mt-3">
-        Sahan Journal{" "}
-        {city === "st-paul"
-          ? "sent the quiz to all mayoral candidates on the ballot, who all appear in Meet Your Mayor."
-          : "chose a field of six candidates to participate in Meet Your Mayor."}
+        Sahan Journal sent the quiz to all mayoral candidates on the ballot, who
+        all appear in Meet Your Attorney.
       </p>
       <p className="mt-3">
         In the quiz, candidates score 1 point for each answer that matches your

@@ -2,13 +2,7 @@ import React from "react";
 import { PageLayout } from "./PageLayout";
 import { InternalLink, OutboundLink } from "./Links";
 import { formatCandidateContent } from "./QuizContent";
-import {
-  CityProvider,
-  formatContent,
-  getFullCityName,
-  kebabCase,
-  useCity,
-} from "../utils";
+import { CityProvider, formatContent, kebabCase } from "../utils";
 import { CandidateSelectorMenu } from "./CandidateSelectorMenu";
 import { SocialShareButtons } from "./SocialShareButtons";
 import { RecentCoverage } from "./RecentCoverage";
@@ -23,16 +17,6 @@ const MINNEAPOLIS_OPEN_ENDED_QUESTIONS = [
   "Should homeless encampments be allowed to exist in Minneapolis? When should the city clear homeless encampments?",
   "Do you agree with how the city handled its presence at the federal drug investigation on Lake Street in June, and how can Minneapolis improve its response in future incidents?",
   "Do you support the policing reforms in the recently abandoned federal consent decree against Minneapolis police? If yes, how should the city ensure these reforms are enacted?",
-  "How can the city make up for lost federal grants and revenue due to cuts from the Trump administration?",
-];
-
-const ST_PAUL_OPEN_ENDED_QUESTIONS = [
-  "Why are you running for mayor?",
-  "As mayor, how will you advocate for immigrants and communities of color?",
-  "How can the city revive downtown, which is home to several vacant offices?",
-  "How can the city best prevent another cyberattack?",
-  "The corridor in Midway starting at Snelling Ave and University Ave has lost or is losing several businesses. What should the mayor do to revive this corridor, which is home to many communities of color?",
-  "Do you support the city’s sanctuary policy, and should it be expanded?",
   "How can the city make up for lost federal grants and revenue due to cuts from the Trump administration?",
 ];
 
@@ -51,10 +35,9 @@ const CandidatePageContent: React.FC<{ pageContext: any }> = ({
 }) => {
   const { candidateName } = pageContext;
   const score = useAppStore((state) => state.score);
-  const city = useCity();
 
-  const candidateInfo = formatCandidateContent(city).find(
-    (candidate) => candidate.name === candidateName
+  const candidateInfo = formatCandidateContent().find(
+    (candidate) => candidate.name === candidateName,
   );
 
   const candidateStats =
@@ -68,7 +51,7 @@ const CandidatePageContent: React.FC<{ pageContext: any }> = ({
       ? !!candidateStats
         ? Math.round(
             (candidateStats.totalScore / candidateStats.totalPossibleScore) *
-              100
+              100,
           )
         : 0
       : null;
@@ -87,34 +70,19 @@ const CandidatePageContent: React.FC<{ pageContext: any }> = ({
     quote4,
     quote5,
     quote6,
-    quote7,
   } = candidateInfo;
 
   return (
     <PageLayout
       customMetadata={{
-        slug: `${process.env.GATSBY_SLUG}/${city}`,
-        shareImageFilename:
-          city === "st-paul"
-            ? "meet-your-mayor-st-paul.jpg"
-            : "meet-your-mayor-minneapolis.jpg",
-        siteName: `${candidateName} | ${
-          city === "st-paul"
-            ? "Meet Your St. Paul Mayor 2025"
-            : "Meet Your Minneapolis Mayor 2025"
+        slug: `${process.env.GATSBY_SLUG}`,
+        shareImageFilename: "meet-your-mayor-minneapolis.jpg",
+        siteName: `${candidateName} | "Meet Your Minneapolis Mayor 2025"
         }`,
-        seoHeadline: `${candidateName}: Meet Your Mayor ${getFullCityName(
-          city
-        )}`,
-        socialHeadline: `${candidateName}: Meet Your Mayor ${getFullCityName(
-          city
-        )}`,
-        socialDescription: `Candidates for ${getFullCityName(
-          city
-        )} mayor told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
-        seoDescription: `Candidates for ${getFullCityName(
-          city
-        )} mayor told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
+        seoHeadline: `${candidateName}: Meet Your Mayor`,
+        socialHeadline: `${candidateName}: Meet Your Mayor`,
+        socialDescription: `Candidates for mayor told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
+        seoDescription: `Candidates for mayor told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
       }}
     >
       <div className="container pt-6" style={{ maxWidth: "1100px" }}>
@@ -215,25 +183,14 @@ const CandidatePageContent: React.FC<{ pageContext: any }> = ({
           )}
         </div>
 
-        {city === "st-paul"
-          ? [quote1, quote2, quote3, quote4, quote5, quote6, quote7].map(
-              (quote, i) => (
-                <div className="copy" key={i}>
-                  <h3 className="deck has-text-left mb-4 has-text-weight-semibold">
-                    {ST_PAUL_OPEN_ENDED_QUESTIONS[i]}
-                  </h3>
-                  {formatContent(quote, true)}
-                </div>
-              )
-            )
-          : [quote1, quote2, quote3, quote4, quote5, quote6].map((quote, i) => (
-              <div className="copy my-2 py-2" key={i}>
-                <h3 className="deck has-text-left mb-4 has-text-weight-semibold">
-                  {MINNEAPOLIS_OPEN_ENDED_QUESTIONS[i]}
-                </h3>
-                {formatContent(quote, true)}
-              </div>
-            ))}
+        {[quote1, quote2, quote3, quote4, quote5, quote6].map((quote, i) => (
+          <div className="copy my-2 py-2" key={i}>
+            <h3 className="deck has-text-left mb-4 has-text-weight-semibold">
+              {MINNEAPOLIS_OPEN_ENDED_QUESTIONS[i]}
+            </h3>
+            {formatContent(quote, true)}
+          </div>
+        ))}
       </div>
       {/* <div className="container">
         <div className="columns">

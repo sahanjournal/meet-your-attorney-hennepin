@@ -1,11 +1,5 @@
 import React, { useEffect, useMemo } from "react";
-import {
-  arrayToNiceList,
-  groupBy,
-  kebabCase,
-  shuffleArray,
-  useCity,
-} from "../utils";
+import { arrayToNiceList, groupBy, kebabCase, shuffleArray } from "../utils";
 import { formatQuestionContent, generateBlankScorecard } from "./QuizContent";
 import { SocialShareButtons } from "./SocialShareButtons";
 import { InternalLink, SmoothScroll } from "./Links";
@@ -41,8 +35,6 @@ export const getQuestionsLeftToAnswer = () => {
 const MAX_FAVORITE_TOPICS = 3;
 
 const Results: React.FC = () => {
-  const city = useCity();
-
   const favoriteTopics = useAppStore((state) => state.favoriteTopics);
   const setFavoriteTopics = useAppStore((state) => state.setFavoriteTopics);
 
@@ -52,7 +44,7 @@ const Results: React.FC = () => {
   const setScore = useAppStore((state) => state.setScore);
 
   const highestVisibleQuestion = useAppStore(
-    (state) => state.highestVisibleQuestion
+    (state) => state.highestVisibleQuestion,
   );
 
   const showTopicsSelector = highestVisibleQuestion > answers.length;
@@ -61,7 +53,7 @@ const Results: React.FC = () => {
     let newArray = favoriteTopics; // Create a copy of the previous Set
     favoriteTopics.includes(topic)
       ? (newArray = favoriteTopics.filter(
-          (favoriteTopic) => favoriteTopic !== topic
+          (favoriteTopic) => favoriteTopic !== topic,
         ))
       : (newArray = favoriteTopics.concat(topic)); // Add or remove the new element
     setFavoriteTopics(newArray);
@@ -87,13 +79,13 @@ const Results: React.FC = () => {
       questions.forEach((question) => {
         const { number, option1, option2, option3, option4 } = question;
         const userAnswer = answers.find(
-          (answer) => answer.questionNumber === number
+          (answer) => answer.questionNumber === number,
         );
         scorecard.forEach((candidate, i) => {
           if (
             userAnswer?.answer === "1" &&
             option1.matchingCandidates.find(
-              (c) => c.name === candidate.candidateName
+              (c) => c.name === candidate.candidateName,
             )
           ) {
             scorecard[i].scoreList.push({
@@ -104,7 +96,7 @@ const Results: React.FC = () => {
           } else if (
             userAnswer?.answer === "2" &&
             option2.matchingCandidates.find(
-              (c) => c.name === candidate.candidateName
+              (c) => c.name === candidate.candidateName,
             )
           ) {
             scorecard[i].scoreList.push({
@@ -115,7 +107,7 @@ const Results: React.FC = () => {
           } else if (
             userAnswer?.answer === "3" &&
             option3.matchingCandidates.find(
-              (c) => c.name === candidate.candidateName
+              (c) => c.name === candidate.candidateName,
             )
           ) {
             scorecard[i].scoreList.push({
@@ -126,7 +118,7 @@ const Results: React.FC = () => {
           } else if (
             userAnswer?.answer === "4" &&
             option4.matchingCandidates.find(
-              (c) => c.name === candidate.candidateName
+              (c) => c.name === candidate.candidateName,
             )
           ) {
             scorecard[i].scoreList.push({
@@ -147,7 +139,7 @@ const Results: React.FC = () => {
     scorecard.forEach((candidate) => {
       candidate.totalScore = candidate.scoreList.reduce(
         (total, current) => total + current.points,
-        0
+        0,
       );
       candidate.totalPossibleScore = totalPossibleScore;
     });
@@ -168,7 +160,7 @@ const Results: React.FC = () => {
       score.forEach((candidate, i) => {
         track(`${candidate.candidateName} ranked #${i + 1} in final score`, {
           matchingPercentage: Math.round(
-            (candidate.totalScore / candidate.totalPossibleScore) * 100
+            (candidate.totalScore / candidate.totalPossibleScore) * 100,
           ),
         });
       });
@@ -223,7 +215,7 @@ const Results: React.FC = () => {
                         "is-white",
                         "mb-2",
                         favoriteTopics.includes(questionGroup[0]) &&
-                          "is-selected"
+                          "is-selected",
                       )}
                       onClick={() => {
                         track(
@@ -231,7 +223,7 @@ const Results: React.FC = () => {
                             favoriteTopics.includes(questionGroup[0])
                               ? "Removed"
                               : "Selected"
-                          } favorite topic: ${questionGroup[0]}`
+                          } favorite topic: ${questionGroup[0]}`,
                         );
                         changeFavoriteTopics(questionGroup[0]);
                       }}
@@ -310,7 +302,7 @@ const Results: React.FC = () => {
                     results={{
                       topCandidate: score[0].candidateName,
                       matchScore: Math.round(
-                        (score[0].totalScore / totalPossiblePoints) * 100
+                        (score[0].totalScore / totalPossiblePoints) * 100,
                       ),
                     }}
                   />
@@ -349,17 +341,14 @@ const Results: React.FC = () => {
                 {arrayToNiceList(
                   score
                     .slice(0, 1 + candidatesTiedWithFirstPlace)
-                    .map((candidate) => candidate.candidateName)
+                    .map((candidate) => candidate.candidateName),
                 )}
               </span>
-              . In the election you may choose up to{" "}
-              {city === "st-paul" ? "six" : "three"} candidates, so consider
-              your runner-up matches:
             </div>
 
             {score.map((candidate, i) => {
               const scoreBySubject = Object.entries(
-                groupBy(candidate.scoreList, "subject")
+                groupBy(candidate.scoreList, "subject"),
               );
 
               /**
@@ -369,7 +358,7 @@ const Results: React.FC = () => {
               const fullyMatchedSubjects = scoreBySubject.filter(
                 (subject) =>
                   subject[1].filter((question) => question.points > 0)
-                    .length === subject[1].length
+                    .length === subject[1].length,
               );
 
               /**
@@ -381,7 +370,7 @@ const Results: React.FC = () => {
                   subject[1].filter((question) => question.points > 0).length >
                     0 &&
                   subject[1].filter((question) => question.points > 0).length <
-                    subject[1].length
+                    subject[1].length,
               );
 
               /**
@@ -391,7 +380,7 @@ const Results: React.FC = () => {
               const nonMatchedSubjects = scoreBySubject.filter(
                 (subject) =>
                   subject[1].filter((question) => question.points > 0)
-                    .length === 0
+                    .length === 0,
               );
 
               const resultsSections = [
@@ -438,7 +427,7 @@ const Results: React.FC = () => {
                             <div className="mt-3">
                               {Math.round(
                                 (candidate.totalScore / totalPossiblePoints) *
-                                  100
+                                  100,
                               )}
                               % Match
                             </div>
@@ -448,7 +437,7 @@ const Results: React.FC = () => {
                       <div className="is-flex is-align-items-center">
                         <h2 className="headline is-hidden-mobile">
                           {Math.round(
-                            (candidate.totalScore / totalPossiblePoints) * 100
+                            (candidate.totalScore / totalPossiblePoints) * 100,
                           )}
                           % Match
                         </h2>
@@ -457,7 +446,7 @@ const Results: React.FC = () => {
                     <div className="details-content">
                       {resultsSections
                         .filter(
-                          (resultsSection) => resultsSection.content.length > 0
+                          (resultsSection) => resultsSection.content.length > 0,
                         )
                         .map((resultsSections, i) => (
                           <div key={i}>
@@ -471,12 +460,12 @@ const Results: React.FC = () => {
                                     <h3
                                       className={classnames(
                                         favoriteTopics.includes(
-                                          questionGroup[0]
-                                        ) && "has-text-weight-semibold"
+                                          questionGroup[0],
+                                        ) && "has-text-weight-semibold",
                                       )}
                                     >
                                       {favoriteTopics.includes(
-                                        questionGroup[0]
+                                        questionGroup[0],
                                       ) && "★"}{" "}
                                       {questionGroup[0]}{" "}
                                     </h3>
@@ -490,13 +479,13 @@ const Results: React.FC = () => {
                                       ))}
                                       {
                                         questionGroup[1].filter(
-                                          (q) => q.points > 0
+                                          (q) => q.points > 0,
                                         ).length
                                       }
                                       /{questionGroup[1].length}
                                     </div>
                                   </div>
-                                )
+                                ),
                               )}
                             </div>
                           </div>
@@ -508,7 +497,7 @@ const Results: React.FC = () => {
                             to={kebabCase(candidate.candidateName)}
                             onClick={() =>
                               track(
-                                `Visit ${candidate.candidateName}'s page from results`
+                                `Visit ${candidate.candidateName}'s page from results`,
                               )
                             }
                           >

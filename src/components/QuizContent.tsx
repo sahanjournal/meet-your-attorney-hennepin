@@ -1,13 +1,13 @@
 import { questionContent } from "../question-content";
 import { candidateContent } from "../candidate-content";
-import { City, groupBy, kebabCase, useCity } from "../utils";
+import { groupBy, kebabCase } from "../utils";
 
 /**
  * This function takes our raw JSON content from `candidate-content.js`
  * and formats it into a organized JS object that keeps track of all
  * candidates' responses to quiz questions, with explanations.
  */
-export const formatCandidateContent = (city: City | undefined) => {
+export const formatCandidateContent = () => {
   // Filter candidates by city:
   const candidates = candidateContent;
 
@@ -54,7 +54,7 @@ export const testCandidateContentFormat = () => {
   }
 };
 
-export const generateListOfCandidates = (city?: City) => {
+export const generateListOfCandidates = () => {
   return Object.values(candidateContent)
     .sort((a, b) => (a.name > b.name ? 1 : -1)) // Sort alphabetically by name
     .map((candidate) => ({
@@ -70,8 +70,7 @@ export const generateListOfCandidates = (city?: City) => {
  * quiz question responses.
  */
 export const formatQuestionContent = () => {
-  const city = useCity();
-  const candidates = formatCandidateContent(city);
+  const candidates = formatCandidateContent();
   const findMatchingCandidates = (questionIndex: number, quizOption: string) =>
     candidates
       .filter((c) => c.responses[questionIndex].optionNumber === quizOption)

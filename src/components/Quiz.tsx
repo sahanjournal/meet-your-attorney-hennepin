@@ -1,12 +1,7 @@
 import React, { FC, useState } from "react";
 import classnames from "classnames";
 import Results, { getQuestionsLeftToAnswer } from "./Results";
-import {
-  formatContent,
-  getFullCityName,
-  smoothScrollToCenter,
-  useCity,
-} from "../utils";
+import { formatContent, smoothScrollToCenter } from "../utils";
 import { formatQuestionContent, generateListOfCandidates } from "./QuizContent";
 import { SmoothScroll } from "./Links";
 import { abbreviateName, MatchingCandidates } from "./MatchingCandidates";
@@ -14,7 +9,6 @@ import { useAppStore } from "../useAppStore";
 import { Methodology } from "./Methodology";
 import { track } from "@amplitude/analytics-browser";
 import { Bobblehead } from "./Illustration";
-import { Link } from "gatsby";
 
 export const CircleIcon: FC<{ filledIn?: boolean }> = ({ filledIn }) => (
   <div
@@ -30,9 +24,7 @@ export const CircleIcon: FC<{ filledIn?: boolean }> = ({ filledIn }) => (
 );
 
 const Quiz = () => {
-  const city = useCity();
-  const cityName = getFullCityName(city);
-  const candidates = generateListOfCandidates(city);
+  const candidates = generateListOfCandidates();
 
   const answers = useAppStore((state) => state.answers);
   const setAnswers = useAppStore((state) => state.setAnswers);
@@ -40,10 +32,10 @@ const Quiz = () => {
   const resetAnswers = useAppStore((state) => state.resetAnswers);
 
   const highestVisibleQuestion = useAppStore(
-    (state) => state.highestVisibleQuestion
+    (state) => state.highestVisibleQuestion,
   );
   const setHighestVisibleQuestion = useAppStore(
-    (state) => state.setHighestVisibleQuestion
+    (state) => state.setHighestVisibleQuestion,
   );
 
   const questions = formatQuestionContent();
@@ -88,21 +80,11 @@ const Quiz = () => {
                 The Meet Your Mayor Quiz
               </h1>
               <p className="copy has-text-left mt-5">
-                Voters of {cityName}: Still trying to figure out who to rank for
-                mayor? This quiz will help you decide by matching your responses
-                to {city === "st-paul" ? "10" : "11"} questions the candidates
-                also answered on urgent issues facing {cityName}. Early voting
-                has already started and the general election is on November 4,
-                2025.
-              </p>
-              <p className="copy has-text-left mt-5">
-                Do you live in{" "}
-                {city === "minneapolis" ? "St. Paul" : "Minneapolis"}? Check out
-                our{" "}
-                <Link to={city === "minneapolis" ? "/st-paul" : "/minneapolis"}>
-                  {city === "minneapolis" ? "St. Paul" : "Minneapolis"} Quiz
-                </Link>{" "}
-                instead.
+                Voters of Hennepin County: Still trying to figure out who to
+                rank for mayor? This quiz will help you decide by matching your
+                responses to TK questions the candidates also answered on urgent
+                issues facing the county. Early voting has already started and
+                the general election is on November 4, 2025.
               </p>
 
               <div
@@ -217,7 +199,7 @@ const Quiz = () => {
                     <div key={i} className="is-inline-block">
                       {questionGroup[1].map((question, i) => {
                         const questionAnswered = answers.find(
-                          (answer) => answer.questionNumber === question.number
+                          (answer) => answer.questionNumber === question.number,
                         )?.answer;
                         return (
                           <span
@@ -267,7 +249,7 @@ const Quiz = () => {
                           const isFirstQuestionInSection = i === 0;
 
                           const answerSelected = answers.find(
-                            (answer) => answer.questionNumber === number
+                            (answer) => answer.questionNumber === number,
                           )?.answer;
 
                           const isQuestionVisible =
@@ -346,7 +328,7 @@ const Quiz = () => {
                                               ? answerSelected == optionNumber
                                                 ? "is-selected"
                                                 : "is-disabled"
-                                              : "is-active"
+                                              : "is-active",
                                           )}
                                           onClick={() => {
                                             recordAnswer(number, optionNumber);
@@ -358,11 +340,11 @@ const Quiz = () => {
                                               } answer`,
                                               {
                                                 answer: optionNumber,
-                                              }
+                                              },
                                             );
                                             const id =
                                               document.getElementById(
-                                                optionSlug
+                                                optionSlug,
                                               );
                                             if (!!id) {
                                               smoothScrollToCenter(id);
@@ -383,7 +365,7 @@ const Quiz = () => {
                                             `option-number-${optionNumber}`,
                                             answerSelected == optionNumber
                                               ? "is-selected"
-                                              : "is-disabled"
+                                              : "is-disabled",
                                           )}
                                         >
                                           <MatchingCandidates
@@ -466,7 +448,7 @@ const Quiz = () => {
                           {questionGroup[1].map((question, i) => {
                             const questionAnswered = answers.find(
                               (answer) =>
-                                answer.questionNumber === question.number
+                                answer.questionNumber === question.number,
                             )?.answer;
                             return (
                               <span
