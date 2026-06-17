@@ -2,7 +2,7 @@ import React from "react";
 import { Link as AnchorLink } from "react-scroll";
 
 const DEFAULT_SAHAN_UTM_PARAMS =
-  "?utm_source=link&utm_medium=website&utm_campaign=meet%20your%20mayor%202025%20";
+  "?utm_source=link&utm_medium=website&utm_campaign=meet%20your%20attorney%202026%20";
 
 export const OutboundLink: React.FC<{
   to: string;

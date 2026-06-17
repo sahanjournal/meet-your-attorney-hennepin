@@ -36,12 +36,12 @@ const Homepage = () => {
     <PageLayout
       customMetadata={{
         slug: `${process.env.GATSBY_SLUG}`,
-        shareImageFilename: "meet-your-mayor-minneapolis.jpg",
-        siteName: `Meet Your Mayor 2025`,
-        seoHeadline: `Meet Your Mayor: Take this quiz`,
-        socialHeadline: `Take the Quiz: Meet Your Mayor`,
-        socialDescription: `Candidates for mayor told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
-        seoDescription: `Candidates for mayor told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
+        shareImageFilename: "social-image.jpg",
+        siteName: `Meet Your Attorney 2026`,
+        seoHeadline: `Meet Your Attorney: Take this quiz`,
+        socialHeadline: `Take the Quiz: Meet Your Attorney`,
+        socialDescription: `Candidates for Hennepin County Attorney told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
+        seoDescription: `Candidates for Hennepin County Attorney told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
       }}
     >
       <div className="hero is-fullheight-with-navbar has-color-background">
@@ -50,15 +50,16 @@ const Homepage = () => {
           <div className="columns" style={{ width: "100%" }}>
             <div className="column is-half">
               <h1 className="headline has-text-left mt-0 mb-3">
-                Meet Your Mayor 2025
+                Meet Your Attorney 2026
               </h1>
               <div className="attribution">
                 <p className="eyebrow has-text-left mb-2">
                   Updated: {getDateUpdated()}
                 </p>
                 <p className="deck has-text-left" style={{ maxWidth: "600px" }}>
-                  Who should you rank on your ballot to be the next mayor? Take
-                  the same quiz the candidates did and find your closest match.
+                  Who should you rank on your ballot to be the next Hennepin
+                  County Attorney? Take the same quiz the candidates did and
+                  find your closest match.
                 </p>
                 <div className="is-flex is-flex-direction-column mt-5 mb-6">
                   <SmoothScroll
@@ -100,7 +101,7 @@ const Homepage = () => {
                 </div>
                 <div className="eyebrow has-text-left mt-4 mb-2 is-flex is-align-items-center">
                   <div className="mr-3 is-flex-shrink-2 pl-4">
-                    Share Meet Your Mayor:
+                    Share Meet Your Attorney:
                   </div>{" "}
                   <SocialShareButtons />
                 </div>

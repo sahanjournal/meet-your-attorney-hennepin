@@ -6,8 +6,8 @@ export const Methodology = () => {
   return (
     <div className="copy">
       <p className="mt-3">
-        Sahan Journal sent the quiz to all mayoral candidates on the ballot, who
-        all appear in Meet Your Attorney.
+        Sahan Journal sent the quiz to all attorney candidates on the ballot,
+        who all appear in Meet Your Attorney.
       </p>
       <p className="mt-3">
         In the quiz, candidates score 1 point for each answer that matches your
@@ -20,7 +20,7 @@ export const Methodology = () => {
         in the final tally.
       </p>
       <p className="mt-3">
-        Meet Your Mayor does not collect any personal data from users. We do
+        Meet Your Attorney does not collect any personal data from users. We do
         collect quiz responses anonymously to improve this resource and track
         aggregate results.
       </p>
@@ -28,7 +28,7 @@ export const Methodology = () => {
         As in 2021, we are pleased to make our code, which originally came from{" "}
         <OutboundLink to="https://www.thecity.nyc/">THE CITY</OutboundLink>,
         available on{" "}
-        <OutboundLink to="https://github.com/sahanjournal/meet-your-mayor-twin-cities">
+        <OutboundLink to="https://github.com/sahanjournal/meet-your-attorney-hennepin">
           Github
         </OutboundLink>{" "}
         for use by other organizations. So far our project has been adapted for

@@ -60,11 +60,11 @@ export const RecentCoverage: React.FC = () => {
           href: item.link,
         }));
 
-        // Filter out links that are "Meet Your Mayor" related:
+        // Filter out links that are "Meet Your Attorney" related:
         const filteredLinks = formattedLinks
           .filter(
             (link: any) =>
-              link.href && !link.href.includes(process.env.GATSBY_SLUG)
+              link.href && !link.href.includes(process.env.GATSBY_SLUG),
           )
           .slice(0, 3);
 
