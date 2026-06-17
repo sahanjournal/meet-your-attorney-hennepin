@@ -1,6 +1,6 @@
-# Meet Your Mayor 2025: Twin Cities
+# Meet Your Hennepin County Attorney, 2026
 
-**A multi-page Gatsby-powered news application by [Sahan Journal](https://sahanjournal.com), based on a project by [THE CITY](https://www.thecity.nyc) and [Gothamist](https://gothamist.com/), designed to inform residents of Minneapolis and St. Paul about their 2025 NYC mayoral candidates.**
+**A multi-page Gatsby-powered news application by [Sahan Journal](https://sahanjournal.com), based on a project by [THE CITY](https://www.thecity.nyc) and [Gothamist](https://gothamist.com/), designed to inform residents of Hennepin County of Attorney race candidates.**
 
 **_This README is copied from the original project documentation, found at [github.com/thecityny/2025-meet-your-mayor](https://github.com/thecityny/2025-meet-your-mayor)_**
 
@@ -17,7 +17,7 @@
 ## 📁 Project Structure
 
 ```
-2025-meet-your-mayor/
+meet-your-attorney-hennepin/
 ├── src/                       # Source files
 │   ├── @types/                # Custom type declarations
 │   ├── assets/                # Logos
@@ -27,12 +27,9 @@
 ├── static/                    # Static assets, like photos and illustrations
 ├── .github/                   # Scripts for running Github Actions
 ├── .env                       # Client-accessible environment variables
-├── candidate-mpls-content.js  # JS object with each Minneapolis candidate's info and question responses
-├── candidate-mpls-list.json   # JSON list of each Minneapolis candidate and their full name
-├── question-mpls-content.js   # JS object with each Minneapolis quiz question and set of responses
-├── candidate-stp-content.js   # JS object with each St. Paul candidate's info and question responses
-├── candidate-stp-list.json    # JSON list of each St. Paul candidate and their full name
-├── question-stp-content.js    # JS object with each St. Paul quiz question and set of responses
+├── candidate-content.js       # JS object with each candidate's info and question responses
+├── candidate-list.json        # JSON list of each candidate and their full name
+├── question-content.js        # JS object with each quiz question and set of responses
 ├── gatsby-config.js           # Gatsby configuration
 ├── gatsby-node.js             # Gatsby Node APIs
 ├── package.json               # Project metadata and dependencies
@@ -47,13 +44,13 @@ First you’ll need to clone this repository down to your computer to work with 
 Open up your terminal and cd to your code folder. Clone the project into your folder. This will copy the project onto your computer.
 
 ```sh
-gh repo clone https://github.com/sahanjournal/meet-your-mayor-twin-cities
+gh repo clone https://github.com/sahanjournal/meet-your-attorney-hennepin
 ```
 
 Once the repository has finished downloading, cd into it and install the Node.js dependencies.
 
 ```sh
-cd meet-your-mayor-twin-cities
+cd meet-your-attorney-hennepin
 npm install
 ```
 
@@ -63,7 +60,7 @@ Once the dependencies have been installed, you’re ready to preview the project
 npm start
 ```
 
-Now go to `localhost:8000` in your browser. You should see a copy of the Meet Your Mayor site ready for your customizations.
+Now go to `localhost:8000` in your browser. You should see a copy of the Meet Your Attorney site ready for your customizations.
 
 ## Available Scripts
 
@@ -81,7 +78,7 @@ You may also see any lint errors in the console.
 
 Runs the `downloadGoogleDocContent` function inside `src/scripts.js`. This function uses [ArchieML](http://archieml.org/) to download content from a Google Doc and save it in a JavaScript object variable in `[FILENAME]-content.js` in the `src` directory.
 
-This current iteration of the project downloads from four different google docs via the four options: `FILENAME = candidate-mpls` and `FILENAME = questions-mpls` for Minneapolis candidate and quiz question data, and then `FILENAME = candidate-stp` and `FILENAME = questions-stp` for St. Paul candidate and quiz question data. However, you can edit the `downloadGoogleDocContent` function inside `src/scripts.js` to work with whatever set of documents makes sense for your project. Using this integration is totally optional — feel free to edit the content in any of these files directly, which all start with `candidate-` or `question-`.
+This current iteration of the project downloads from four different google docs via the four options: `FILENAME = candidate` and `FILENAME = questions` for candidate and quiz question data. However, you can edit the `downloadGoogleDocContent` function inside `src/scripts.js` to work with whatever set of documents makes sense for your project. Using this integration is totally optional — feel free to edit the content in any of these files directly, which start with `candidate-` or `question-`.
 
 NOTE: before running this command, you must globally install the AML Google Doc Server on your computer by running:
 
