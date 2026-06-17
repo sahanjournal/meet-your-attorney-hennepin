@@ -23,23 +23,23 @@ $mobile-breakpoint: 768px;
 $tablet-breakpoint: 1025px;
 
 #main {
-  &.minneapolis-style {
-    --sahan-primary: #f2c2c7;
-    --sahan-primary-light: #f4d2d6;
-    --sahan-primary-dark: #f06a6a;
-    --sahan-primary-dark-shadow: #{color.adjust(#f06a6a, $lightness: -60%)};
-    --sahan-primary-mid-shadow: #{color.adjust(#f2c2c7, $lightness: -60%)};
-    --sahan-primary-light-shadow: #{color.adjust(#f06a6a, $lightness: -10%)};
-    --sahan-opposite: #c8c38a;
+  &.hennepin-style {
+    --sahan-primary: #ffe99f;
+    --sahan-primary-light: #fbeec2;
+    --sahan-primary-dark: #fdd143;
+    --sahan-primary-dark-shadow: #{color.adjust(#fdd143, $lightness: -60%)};
+    --sahan-primary-mid-shadow: #{color.adjust(#ffe99f, $lightness: -60%)};
+    --sahan-primary-light-shadow: #{color.adjust(#fdd143, $lightness: -10%)};
+    --sahan-opposite: #ccc0ff;
   }
-  &.st-paul-style {
-    --sahan-primary: #c8c38a;
-    --sahan-primary-light: #e5e2c4;
-    --sahan-primary-dark: #99943c;
-    --sahan-primary-dark-shadow: #{color.adjust(#99943c, $lightness: -60%)};
-    --sahan-primary-mid-shadow: #{color.adjust(#c8c38a, $lightness: -60%)};
-    --sahan-primary-light-shadow: #{color.adjust(#99943c, $lightness: -10%)};
-    --sahan-opposite: #f2c2c7;
+  &.hennepin-style-alternate {
+    --sahan-primary: #ccc0ff;
+    --sahan-primary-light: #ded8fc;
+    --sahan-primary-dark: #9b85ff;
+    --sahan-primary-dark-shadow: #{color.adjust(#9b85ff, $lightness: -60%)};
+    --sahan-primary-mid-shadow: #{color.adjust(#ccc0ff, $lightness: -60%)};
+    --sahan-primary-light-shadow: #{color.adjust(#9b85ff, $lightness: -10%)};
+    --sahan-opposite: #ccc0ff;
   }
 }
 
@@ -197,6 +197,25 @@ details {
   border-radius: 5px;
   border: 1px solid colors.$sahan-black;
   background-color: transparent;
+}
+
+.new-banner {
+  span {
+    display: inline-block;
+    animation: wave-letter 0.9s ease-in-out infinite;
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.09s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.18s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.27s;
+    }
+  }
 }
 
 // BUTTONS:
@@ -713,6 +732,10 @@ hr {
   background-color: var(--sahan-primary-light);
 }
 
+.has-transparent-background {
+  background-color: transparent;
+}
+
 .has-white-background {
   background-color: colors.$sahan-white;
 }
@@ -723,6 +746,11 @@ hr {
 
 .has-opposite-background {
   background-color: var(--sahan-opposite);
+}
+
+.has-dotted-background {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Ccircle cx='7' cy='7' r='1.5' fill='%23111' fill-opacity='0.1'/%3E%3C/svg%3E");
+  background-size: 10px 10px;
 }
 
 // ANIMATIONS:
@@ -796,6 +824,16 @@ hr {
   }
   25% {
     transform: translateY(1px);
+  }
+}
+
+@keyframes wave-letter {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }
 

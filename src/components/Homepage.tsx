@@ -34,6 +34,7 @@ const Homepage = () => {
 
   return (
     <PageLayout
+      isHomepage
       customMetadata={{
         slug: `${process.env.GATSBY_SLUG}`,
         shareImageFilename: "social-image.jpg",
@@ -44,11 +45,16 @@ const Homepage = () => {
         seoDescription: `Candidates for Hennepin County Attorney told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
       }}
     >
-      <div className="hero is-fullheight-with-navbar has-color-background">
+      <div className="hero is-fullheight has-color-background has-dotted-background pt-6">
         <IntroAnimation isMobile />
         <div className="hero-body pt-6">
           <div className="columns" style={{ width: "100%" }}>
             <div className="column is-half">
+              <p className="eyebrow new-banner has-text-left mb-1 has-text-weight-semibold">
+                {"New!".split("").map((letter, i) => (
+                  <span key={i}>{letter}</span>
+                ))}
+              </p>
               <h1 className="headline has-text-left mt-0 mb-3">
                 Meet Your Attorney 2026
               </h1>
@@ -113,7 +119,7 @@ const Homepage = () => {
       </div>
       <Quiz />
       <NewsletterSignupBanner />
-      <div className="hero is-fullheight-with-navbar pt-6">
+      <div className="hero is-fullheight pt-6">
         <div className="container mt-6 pt-5" id="learn">
           <div className="columns">
             <div className="column is-two-thirds">
