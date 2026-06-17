@@ -213,7 +213,7 @@ export const PageLayout: React.FC<{
   });
 
   return (
-    <article id="main" className="minneapolis-style">
+    <article id="main" className="hennepin-style-alternate">
       <Header />
       <Helmet>
         <title>{`${siteName}`}</title>

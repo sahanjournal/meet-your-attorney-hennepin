@@ -23,6 +23,24 @@ $mobile-breakpoint: 768px;
 $tablet-breakpoint: 1025px;
 
 #main {
+  &.hennepin-style {
+    --sahan-primary: #ffe99f;
+    --sahan-primary-light: #fbeec2;
+    --sahan-primary-dark: #fdd143;
+    --sahan-primary-dark-shadow: #{color.adjust(#fdd143, $lightness: -60%)};
+    --sahan-primary-mid-shadow: #{color.adjust(#ffe99f, $lightness: -60%)};
+    --sahan-primary-light-shadow: #{color.adjust(#fdd143, $lightness: -10%)};
+    --sahan-opposite: #ccc0ff;
+  }
+  &.hennepin-style-alternate {
+    --sahan-primary: #ccc0ff;
+    --sahan-primary-light: #ded8fc;
+    --sahan-primary-dark: #9b85ff;
+    --sahan-primary-dark-shadow: #{color.adjust(#9b85ff, $lightness: -60%)};
+    --sahan-primary-mid-shadow: #{color.adjust(#ccc0ff, $lightness: -60%)};
+    --sahan-primary-light-shadow: #{color.adjust(#9b85ff, $lightness: -10%)};
+    --sahan-opposite: #ccc0ff;
+  }
   &.minneapolis-style {
     --sahan-primary: #f2c2c7;
     --sahan-primary-light: #f4d2d6;
