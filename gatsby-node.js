@@ -27,7 +27,7 @@ let dynamicPageContent = Object.entries(candidateList).map(
 
 exports.createPages = async function ({ actions }) {
   dynamicPageContent.forEach(({ name }) => {
-    const slug = "minneapolis/" + kebabCase(name);
+    const slug = kebabCase(name);
     actions.createPage({
       path: slug,
       component: require.resolve("./src/components/CandidatePage.tsx"),
