@@ -142,7 +142,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
           <SocialShareButtons />
         </div>
 
-        <div className="p-3 has-color-background my-6">
+        <div className="p-3 has-color-background has-dotted-background my-6">
           {!!age && (
             <div className="eyebrow has-text-left mt-0 mb-4">
               <span className="has-text-weight-semibold">Age: </span>

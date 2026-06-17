@@ -36,7 +36,7 @@ const Header: React.FC<{ isHomepage?: boolean }> = ({ isHomepage }) => {
         `nav py-1`,
         isHomepage
           ? "has-transparent-background is-position-absolute"
-          : "has-color-background",
+          : "has-color-background has-dotted-background",
       )}
       role="navigation"
       aria-label="main navigation"
@@ -62,7 +62,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="footer has-color-background">
+    <footer className="footer has-color-background has-dotted-background">
       <div
         className="container is-flex is-flex-direction-column is-align-items-center p-0"
         style={{ maxWidth: "750px" }}
