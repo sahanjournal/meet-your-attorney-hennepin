@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { QuizInput, ScoreCard } from "./components/QuizContent";
-import { questionMplsContent } from "./question-mpls-content";
+import { questionContent } from "./question-content";
 import { questionStpContent } from "./question-stp-content";
 import { track } from "@amplitude/analytics-browser";
 import { City, useCity } from "./utils";
@@ -12,7 +12,7 @@ import { City, useCity } from "./utils";
  */
 export const createBlankAnswersList = (city: City) => {
   const questionContent =
-    city === "st-paul" ? questionStpContent : questionMplsContent;
+    city === "st-paul" ? questionStpContent : questionContent;
 
   return Object.entries(questionContent).map((question, i) => ({
     questionNumber: i + 1,
@@ -86,7 +86,7 @@ function createAppStore(cityKey: City) {
         migrate: (persistedState, version): AppState => {
           console.log(
             `Migrating AppState for ${cityKey} from version`,
-            version
+            version,
           );
 
           const state = persistedState as AppState;
@@ -104,8 +104,8 @@ function createAppStore(cityKey: City) {
             return { ...state, version: cityVersion };
           }
         },
-      }
-    )
+      },
+    ),
   );
 }
 
@@ -125,7 +125,7 @@ export function useAppStore<T>(selector: (state: AppState) => T) {
       break;
     default:
       console.error(
-        `[useAppStore] Unknown city: "${city}". Defaulting to Minneapolis store.`
+        `[useAppStore] Unknown city: "${city}". Defaulting to Minneapolis store.`,
       );
       store = useMinneapolisStore;
       break;

@@ -1,6 +1,6 @@
-import { questionMplsContent } from "../question-mpls-content";
+import { questionContent } from "../question-content";
 import { questionStpContent } from "../question-stp-content";
-import { candidateMplsContent } from "../candidate-mpls-content";
+import { candidateContent } from "../candidate-content";
 import { candidateStpContent } from "../candidate-stp-content";
 import { City, groupBy, kebabCase, useCity } from "../utils";
 
@@ -12,7 +12,7 @@ import { City, groupBy, kebabCase, useCity } from "../utils";
 export const formatCandidateContent = (city: City | undefined) => {
   // Filter candidates by city:
   const candidates =
-    city === "st-paul" ? candidateStpContent : candidateMplsContent;
+    city === "st-paul" ? candidateStpContent : candidateContent;
 
   const splitCandidateInfo = (text: string) => text.split("|");
 
@@ -36,21 +36,21 @@ export const formatCandidateContent = (city: City | undefined) => {
  * TODO: Make this funciton more DRY by passing in the content to test as an argument.
  */
 export const testCandidateContentFormat = () => {
-  for (const outerKey in candidateMplsContent) {
+  for (const outerKey in candidateContent) {
     const innerObj =
-      candidateMplsContent[outerKey as keyof typeof candidateMplsContent];
+      candidateContent[outerKey as keyof typeof candidateContent];
     for (const innerKey in innerObj) {
       const value = innerObj[innerKey as keyof typeof innerObj];
       const pipeCount = (value.match(/\|/g) || []).length;
       const noSpaceBeforeParenthesis = (value.match(/\S\(/) || []).length > 0;
       if (pipeCount > 2) {
         console.log(
-          `Too many pipes in Minneapolis candidate ${outerKey}.${innerKey}: "${value}"`
+          `Too many pipes in Minneapolis candidate ${outerKey}.${innerKey}: "${value}"`,
         );
       }
       if (noSpaceBeforeParenthesis) {
         console.log(
-          `Improper parentesis spacing in Minneapolis candidate ${outerKey}.${innerKey}: "${value}"`
+          `Improper parentesis spacing in Minneapolis candidate ${outerKey}.${innerKey}: "${value}"`,
         );
       }
     }
@@ -64,12 +64,12 @@ export const testCandidateContentFormat = () => {
       const noSpaceBeforeParenthesis = (value.match(/\S\(/) || []).length > 0;
       if (pipeCount > 2) {
         console.log(
-          `Too many pipes in St. Paul candidate ${outerKey}.${innerKey}: "${value}"`
+          `Too many pipes in St. Paul candidate ${outerKey}.${innerKey}: "${value}"`,
         );
       }
       if (noSpaceBeforeParenthesis) {
         console.log(
-          `Improper parentesis spacing in St. Paul candidate ${outerKey}.${innerKey}: "${value}"`
+          `Improper parentesis spacing in St. Paul candidate ${outerKey}.${innerKey}: "${value}"`,
         );
       }
     }
@@ -79,7 +79,7 @@ export const testCandidateContentFormat = () => {
 export const generateListOfCandidates = (city?: City) => {
   // Filter candidates by city:
   const candidateContent =
-    city === "st-paul" ? candidateStpContent : candidateMplsContent;
+    city === "st-paul" ? candidateStpContent : candidateContent;
 
   return Object.values(candidateContent)
     .sort((a, b) => (a.name > b.name ? 1 : -1)) // Sort alphabetically by name
@@ -99,7 +99,7 @@ export const formatQuestionContent = () => {
   const city = useCity();
   const candidates = formatCandidateContent(city);
   const questionContent =
-    city === "st-paul" ? questionStpContent : questionMplsContent;
+    city === "st-paul" ? questionStpContent : questionContent;
   const findMatchingCandidates = (questionIndex: number, quizOption: string) =>
     candidates
       .filter((c) => c.responses[questionIndex].optionNumber === quizOption)
@@ -135,7 +135,7 @@ export const formatQuestionContent = () => {
             name: c.name,
             quote: "",
             source: "",
-          }))
+          })),
       ),
     },
   }));
@@ -164,7 +164,7 @@ export const generateBlankScorecard = (): ScoreCard => {
 
   // Filter candidates by city:
   const candidateContent =
-    city === "st-paul" ? candidateStpContent : candidateMplsContent;
+    city === "st-paul" ? candidateStpContent : candidateContent;
 
   return Object.entries(candidateContent).map((candidate) => {
     return {
