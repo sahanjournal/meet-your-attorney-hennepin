@@ -65,13 +65,13 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
     <PageLayout
       customMetadata={{
         slug: `${process.env.GATSBY_SLUG}`,
-        shareImageFilename: "meet-your-mayor-minneapolis.jpg",
-        siteName: `${candidateName} | "Meet Your Minneapolis Mayor 2025"
+        shareImageFilename: "social-image.jpg",
+        siteName: `${candidateName} | "Meet Your Hennepin County Attorney 2026",
         }`,
-        seoHeadline: `${candidateName}: Meet Your Mayor`,
-        socialHeadline: `${candidateName}: Meet Your Mayor`,
-        socialDescription: `Candidates for mayor told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
-        seoDescription: `Candidates for mayor told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
+        seoHeadline: `${candidateName}: Meet Your Attorney`,
+        socialHeadline: `${candidateName}: Meet Your Attorney`,
+        socialDescription: `Candidates for Hennepin County Attorney told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
+        seoDescription: `Candidates for Hennepin County Attorney told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
       }}
     >
       <div className="container pt-6" style={{ maxWidth: "1100px" }}>
@@ -86,7 +86,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
             >
               ↗
             </div>
-            Meet your mayor
+            Meet your Attorney
           </Link>
         </div>
         <h1 className="headline has-text-left mt-1">{candidateName}</h1>
@@ -138,7 +138,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
           </Link>
         </div>
         <div className="eyebrow has-text-left mt-5 mb-2 is-flex is-align-items-center">
-          <div className="mr-3 is-flex-shrink-2">Share Meet Your Mayor:</div>{" "}
+          <div className="mr-3 is-flex-shrink-2">Share Meet Your Attorney:</div>{" "}
           <SocialShareButtons />
         </div>
 

@@ -77,14 +77,15 @@ const Quiz = () => {
           <div className="container" style={{ maxWidth: "600px" }}>
             <div>
               <h1 className="headline has-text-left">
-                The Meet Your Mayor Quiz
+                The Meet Your Attorney Quiz
               </h1>
               <p className="copy has-text-left mt-5">
                 Voters of Hennepin County: Still trying to figure out who to
-                rank for mayor? This quiz will help you decide by matching your
-                responses to TK questions the candidates also answered on urgent
-                issues facing the county. Early voting has already started and
-                the general election is on November 4, 2025.
+                rank for Hennepin County Attorney? This quiz will help you
+                decide by matching your responses to TK questions the candidates
+                also answered on urgent issues facing the county. Early voting
+                has already started and the general election is on November 4,
+                2025.
               </p>
 
               <div
@@ -168,7 +169,7 @@ const Quiz = () => {
                     className="eyebrow is-link is-inline-block"
                     onClick={() => toggleMethodology()}
                   >
-                    How Meet Your Mayor Works{" "}
+                    How Meet Your Attorney Works{" "}
                     <span>{methodologyVisible ? "-" : "+"}</span>
                   </button>
 

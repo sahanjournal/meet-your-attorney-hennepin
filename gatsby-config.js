@@ -8,7 +8,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `meet-your-mayor-2025`,
+    title: `meet-your-attorney-2026`,
     siteUrl: `${process.env.GATSBY_DOMAIN}`,
   },
   pathPrefix: process.env.PREFIX || process.env.GATSBY_SLUG,

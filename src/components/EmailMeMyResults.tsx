@@ -38,7 +38,7 @@ export const EmailMeMyResults: React.FC<{ topMatches: ScoreCard }> = ({
           body: JSON.stringify({
             email,
             city,
-            quizResults: `Here are your rankings for the mayoral race: ${topMatchesFormatted}`,
+            quizResults: `Here are your rankings for the Hennepin County Attorney race: ${topMatchesFormatted}`,
           }),
         },
       );

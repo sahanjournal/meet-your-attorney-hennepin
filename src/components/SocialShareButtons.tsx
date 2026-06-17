@@ -39,8 +39,8 @@ const getShareText = (
       ? "@sahanjournal"
       : "Sahan Journal";
   return !!results
-    ? `I'm a ${results.matchScore}%25 match with ${results.topCandidate} on the Meet Your Mayor quiz! Find your own match, powered by ${sahanHandle}:`
-    : `Check out the Meet Your Mayor quiz from ${sahanHandle}!`;
+    ? `I'm a ${results.matchScore}%25 match with ${results.topCandidate} on the Meet Your Attorney quiz! Find your own match, powered by ${sahanHandle}:`
+    : `Check out the Meet Your Attorney quiz from ${sahanHandle}!`;
 };
 
 export const SocialShareButtons: React.FC<{
@@ -67,7 +67,7 @@ export const SocialShareButtons: React.FC<{
         ariaLabel="Share on Bluesky"
       />
       <SocialButton
-        url={`mailto:?subject=Meet Your Mayor: 2025&body=${getShareText(
+        url={`mailto:?subject=Meet Your Attorney: 2026&body=${getShareText(
           "email",
           results,
         )} ${shareUrl}`}

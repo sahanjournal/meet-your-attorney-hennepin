@@ -96,7 +96,7 @@ export const NewsletterSignupBanner: React.FC<{
                   className="input is-small"
                   type="email"
                   aria-label="Input your email for election updates"
-                  placeholder="e.g. mayor@mn.gov"
+                  placeholder="e.g. attorney@mn.gov"
                   value={email}
                   onChange={handleChange}
                   required

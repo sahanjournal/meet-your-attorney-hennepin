@@ -89,7 +89,7 @@ const Footer = () => {
             </span>
           ))}
           . Illustrations by Andrés Guzmán. Photos provided by candidates’
-          campaigns. Meet Your Mayor concept from{" "}
+          campaigns. Meet Your Attorney concept from{" "}
           <OutboundLink to="https://www.thecity.nyc/">THE CITY</OutboundLink>.{" "}
           Original design by{" "}
           <OutboundLink to="https://samrabiyah.com">Sam Rabiyah</OutboundLink>{" "}
@@ -99,7 +99,7 @@ const Footer = () => {
 
         <div className="eyebrow mt-5 has-text-centered">
           View source code on{" "}
-          <OutboundLink to="https://github.com/sahanjournal/meet-your-mayor-twin-cities">
+          <OutboundLink to="https://github.com/sahanjournal/meet-your-attorney-hennepin">
             Github
           </OutboundLink>
           .
