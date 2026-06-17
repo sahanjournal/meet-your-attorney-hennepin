@@ -44,7 +44,7 @@ const Homepage = () => {
         seoDescription: `Candidates for Hennepin County Attorney told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
       }}
     >
-      <div className="hero is-fullheight-with-navbar has-color-background has-dotted-background">
+      <div className="hero is-fullheight has-color-background has-dotted-background pt-6">
         <IntroAnimation isMobile />
         <div className="hero-body pt-6">
           <div className="columns" style={{ width: "100%" }}>
@@ -113,7 +113,7 @@ const Homepage = () => {
       </div>
       <Quiz />
       <NewsletterSignupBanner />
-      <div className="hero is-fullheight-with-navbar pt-6">
+      <div className="hero is-fullheight pt-6">
         <div className="container mt-6 pt-5" id="learn">
           <div className="columns">
             <div className="column is-two-thirds">

@@ -30,7 +30,7 @@ const byline = process.env.GATSBY_AUTHOR
 const Header = () => {
   return (
     <nav
-      className="nav has-color-background has-dotted-background"
+      className="nav has-transparent-background is-position-fixed"
       role="navigation"
       aria-label="main navigation"
     >
