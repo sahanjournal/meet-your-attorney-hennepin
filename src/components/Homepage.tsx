@@ -34,6 +34,7 @@ const Homepage = () => {
 
   return (
     <PageLayout
+      isHomepage
       customMetadata={{
         slug: `${process.env.GATSBY_SLUG}`,
         shareImageFilename: "social-image.jpg",

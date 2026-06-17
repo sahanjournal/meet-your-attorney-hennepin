@@ -3,6 +3,7 @@ import SahanLogo from "../assets/logo.svg";
 import { Helmet } from "react-helmet";
 import { OutboundLink } from "./Links";
 import { SocialButton } from "./SocialShareButtons";
+import classnames from "classnames";
 
 //@ts-ignore
 import "../styles/app.scss";
@@ -27,10 +28,16 @@ const byline = process.env.GATSBY_AUTHOR
   ? JSON.parse(process.env.GATSBY_AUTHOR)
   : ([] as any);
 
-const Header = () => {
+const Header: React.FC<{ isHomepage?: boolean }> = ({ isHomepage }) => {
+  console.log("isHomepage", isHomepage);
   return (
     <nav
-      className="nav has-transparent-background is-position-fixed py-1"
+      className={classnames(
+        `nav py-1`,
+        isHomepage
+          ? "has-transparent-background is-position-absolute"
+          : "has-color-background",
+      )}
       role="navigation"
       aria-label="main navigation"
     >
@@ -192,7 +199,8 @@ type MetadataProps = {
 export const PageLayout: React.FC<{
   children: React.ReactNode;
   customMetadata?: MetadataProps;
-}> = ({ children, customMetadata }) => {
+  isHomepage?: boolean;
+}> = ({ children, customMetadata, isHomepage }) => {
   const slug = customMetadata?.slug || process.env.GATSBY_SLUG;
   const url = `${process.env.GATSBY_DOMAIN}${slug}/`;
   const favicon = `${process.env.GATSBY_DOMAIN}${process.env.GATSBY_SLUG}/favicon.ico`;
@@ -218,7 +226,7 @@ export const PageLayout: React.FC<{
 
   return (
     <article id="main" className="hennepin-style-alternate">
-      <Header />
+      <Header isHomepage={isHomepage} />
       <Helmet>
         <title>{`${siteName}`}</title>
         <meta name="theme-color" content="#000000" />
