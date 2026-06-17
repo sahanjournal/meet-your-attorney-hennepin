@@ -1,4 +1,4 @@
-export const candidateMplsContent = {
+export const candidateContent = {
   candidateBrenda: {
     name: "Brenda Short",
     party: "Democrat",

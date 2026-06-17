@@ -9,7 +9,6 @@ import { IntroAnimation } from ".//IntroAnimation";
 import { NewsletterSignupBanner } from ".//NewsletterSignup";
 import { getQuestionsLeftToAnswer } from ".//Results";
 import { useAppStore } from "../useAppStore";
-import { getFullCityName, useCity } from "../utils";
 import { navigate } from "gatsby";
 
 const getDateUpdated = () => {
@@ -28,32 +27,21 @@ const getDateUpdated = () => {
 };
 
 const Homepage = () => {
-  const city = useCity();
-  const cityName = !!city ? getFullCityName(city) : "Minneapolis";
   const questionsLeftToAnswer = getQuestionsLeftToAnswer();
   const highestVisibleQuestion = useAppStore(
-    (state) => state.highestVisibleQuestion
+    (state) => state.highestVisibleQuestion,
   );
 
   return (
     <PageLayout
       customMetadata={{
-        slug: `${process.env.GATSBY_SLUG}/${city}`,
-        shareImageFilename:
-          city === "st-paul"
-            ? "meet-your-mayor-st-paul.jpg"
-            : "meet-your-mayor-minneapolis.jpg",
-        siteName: `Meet Your ${getFullCityName(city)} Mayor 2025`,
-        seoHeadline: `Meet Your ${getFullCityName(city)} Mayor: Take this quiz`,
-        socialHeadline: `Take the Quiz: Meet Your ${getFullCityName(
-          city
-        )} Mayor`,
-        socialDescription: `Candidates for ${getFullCityName(
-          city
-        )} mayor told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
-        seoDescription: `Candidates for ${getFullCityName(
-          city
-        )} mayor told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
+        slug: `${process.env.GATSBY_SLUG}`,
+        shareImageFilename: "meet-your-mayor-minneapolis.jpg",
+        siteName: `Meet Your Mayor 2025`,
+        seoHeadline: `Meet Your Mayor: Take this quiz`,
+        socialHeadline: `Take the Quiz: Meet Your Mayor`,
+        socialDescription: `Candidates for mayor told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
+        seoDescription: `Candidates for mayor told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
       }}
     >
       <div className="hero is-fullheight-with-navbar has-color-background">
@@ -61,9 +49,6 @@ const Homepage = () => {
         <div className="hero-body pt-6">
           <div className="columns" style={{ width: "100%" }}>
             <div className="column is-half">
-              <p className="eyebrow has-text-left mb-1 has-text-weight-semibold">
-                {cityName}
-              </p>
               <h1 className="headline has-text-left mt-0 mb-3">
                 Meet Your Mayor 2025
               </h1>
@@ -72,9 +57,8 @@ const Homepage = () => {
                   Updated: {getDateUpdated()}
                 </p>
                 <p className="deck has-text-left" style={{ maxWidth: "600px" }}>
-                  Who should you rank on your ballot to be the next mayor of{" "}
-                  {cityName}? Take the same quiz the candidates did and find
-                  your closest match.
+                  Who should you rank on your ballot to be the next mayor? Take
+                  the same quiz the candidates did and find your closest match.
                 </p>
                 <div className="is-flex is-flex-direction-column mt-5 mb-6">
                   <SmoothScroll
@@ -158,11 +142,8 @@ const Homepage = () => {
               >
                 We asked the candidates additional questions that didn't make it
                 into the quiz. Click on the candidates' pictures below to read
-                more about why they're running for office, and their views on{" "}
-                {city === "st-paul"
-                  ? "revitalizing downtown, business loss on University Avenue"
-                  : "homeless encampments, police reform"}{" "}
-                and more.
+                more about why they're running for office, and their views on
+                homeless encampments, police reform and more.
               </p>
               <CandidateSelectorMenu />
             </div>

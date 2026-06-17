@@ -1,4 +1,4 @@
-export const questionMplsContent = {
+export const questionContent = {
   question1: {
     title:
       "Do you support the policing reforms in the recently abandoned federal consent decree against Minneapolis police?",

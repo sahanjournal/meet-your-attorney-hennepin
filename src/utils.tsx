@@ -1,39 +1,7 @@
-import React, { createContext, useContext } from "react";
+import React from "react";
 import parse from "html-react-parser";
 import { useLocation } from "@reach/router";
-import candidateMplsList from "./candidate-mpls-list.json";
-import candidateStpList from "./candidate-stp-list.json";
-
-export type City = "minneapolis" | "st-paul";
-
-const CityContext = createContext<City | undefined>(undefined);
-
-export function CityProvider({
-  city,
-  children,
-}: {
-  city: City;
-  children: React.ReactNode;
-}) {
-  return <CityContext.Provider value={city}>{children}</CityContext.Provider>;
-}
-
-export function useCity() {
-  const ctx = useContext(CityContext);
-  if (!ctx) throw new Error("useCity must be used within a CityProvider");
-  return ctx;
-}
-
-export const getFullCityName = (city: City) => {
-  switch (city) {
-    case "minneapolis":
-      return "Minneapolis";
-    case "st-paul":
-      return "St. Paul";
-    default:
-      return "Minneapolis";
-  }
-};
+import candidateList from "./candidate-list.json";
 
 export type CandidateName = {
   name: string;
@@ -57,9 +25,9 @@ export function useIsCandidatePage() {
     .split("/")
     .filter((path) => path !== "")
     .pop();
-  const fullCandidateList = candidateMplsList.concat(candidateStpList);
+  const fullCandidateList = candidateList;
   const candidateSlugs = JSON.parse(JSON.stringify(fullCandidateList)).map(
-    (c: CandidateName) => kebabCase(c.name)
+    (c: CandidateName) => kebabCase(c.name),
   );
   return candidateSlugs.includes(lastPathSegment);
 }
@@ -73,7 +41,7 @@ export function useIsCandidatePage() {
  */
 export const groupBy = <T, K extends keyof any>(
   array: T[],
-  key: keyof T
+  key: keyof T,
 ): Record<K, T[]> => {
   return array.reduce((acc, item) => {
     const groupKey = item[key] as K; // Ensure the key is treated as the correct type
@@ -112,7 +80,7 @@ export const convertToHtml = (text: string) => {
   // Make links outbound:
   formattedText = formattedText.replace(
     "<a href=",
-    '<a target="_blank" rel="noopener noreferrer" href='
+    '<a target="_blank" rel="noopener noreferrer" href=',
   );
 
   // Fix double spaces and non-spaced commas:
@@ -160,7 +128,7 @@ export const arrayToNiceList = (list: string[]) => {
 
 export function smoothScrollToCenter(
   target: HTMLElement,
-  duration: number = 500
+  duration: number = 500,
 ): void {
   const elementTop = target.getBoundingClientRect().top + window.scrollY;
   const elementHeight = target.offsetHeight;

@@ -1,7 +1,6 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import { OutboundLink } from "./Links";
 import classnames from "classnames";
-import { City, useCity } from "../utils";
 
 const SAHAN_FALLBACK_NEWSLETTER_LINK = "https://sahanjournal.com/newsletter/";
 
@@ -10,14 +9,17 @@ export type RequestStatus = "idle" | "loading" | "success" | "error";
 export const NewsletterSignupBanner: React.FC<{
   isOnLandingPage?: boolean;
 }> = ({ isOnLandingPage }) => {
-  const city = useCity();
   const [email, setEmail] = useState<string>("");
   const [status, setStatus] = useState<RequestStatus>("idle");
 
   /**
    * Sign up for Sahan Journal's newsletter via direct API request.
-   */
-  const submitSahan = async (e: FormEvent<HTMLFormElement>, city: City) => {
+   *
+   * NOTE: since this API requires we pass it a city, we've hardcoded "minneapolis"
+   * for now since this quiz is most relevant to Minneapolis voters. Any update to this would
+   * require us to change the sahan-mail API function in a separate repo.
+   * */
+  const submitSahan = async (e: FormEvent<HTMLFormElement>, city: string) => {
     e.preventDefault();
     setStatus("loading");
     try {
@@ -32,7 +34,7 @@ export const NewsletterSignupBanner: React.FC<{
             email,
             city,
           }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -46,14 +48,13 @@ export const NewsletterSignupBanner: React.FC<{
     }
   };
 
-  const handleSubmit =
-    (city: City) => async (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
+  const handleSubmit = () => async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-      setStatus("loading");
+    setStatus("loading");
 
-      submitSahan(e, city);
-    };
+    submitSahan(e, "minneapolis");
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -68,10 +69,10 @@ export const NewsletterSignupBanner: React.FC<{
         className={classnames("container", "py-4", isOnLandingPage && "px-4")}
       >
         <form
-          onSubmit={handleSubmit(city)}
+          onSubmit={handleSubmit()}
           className={classnames(
             "is-flex",
-            !isOnLandingPage && "is-justify-content-center"
+            !isOnLandingPage && "is-justify-content-center",
           )}
         >
           <div className="field">
@@ -79,7 +80,7 @@ export const NewsletterSignupBanner: React.FC<{
               className={classnames(
                 "eyebrow",
                 "mb-2",
-                !isOnLandingPage && "has-text-centered"
+                !isOnLandingPage && "has-text-centered",
               )}
             >
               Keep me briefed about the election — and more:
@@ -87,7 +88,7 @@ export const NewsletterSignupBanner: React.FC<{
             <div
               className={classnames(
                 "is-flex",
-                !isOnLandingPage && "is-align-items-center"
+                !isOnLandingPage && "is-align-items-center",
               )}
             >
               <div className="control mr-3 is-flex-grow-1">
@@ -126,7 +127,7 @@ export const NewsletterSignupBanner: React.FC<{
           <p
             className={classnames(
               "label mt-2",
-              !isOnLandingPage && "has-text-centered"
+              !isOnLandingPage && "has-text-centered",
             )}
           >
             You're signed up!
@@ -135,7 +136,7 @@ export const NewsletterSignupBanner: React.FC<{
           <p
             className={classnames(
               "label mt-2",
-              !isOnLandingPage && "has-text-centered"
+              !isOnLandingPage && "has-text-centered",
             )}
           >
             Something went wrong. Sign up manually via{" "}

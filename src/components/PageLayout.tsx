@@ -4,10 +4,11 @@ import { Helmet } from "react-helmet";
 import { OutboundLink } from "./Links";
 import { SocialButton } from "./SocialShareButtons";
 
+//@ts-ignore
 import "../styles/app.scss";
+//@ts-ignore
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { useCity } from "../utils";
-import { Link, Script } from "gatsby";
+import { Script } from "gatsby";
 
 // DISABLE AMPLITUDE TRACKING FOR NOW:
 // import { init } from "@amplitude/analytics-browser";
@@ -26,8 +27,7 @@ const byline = process.env.GATSBY_AUTHOR
   ? JSON.parse(process.env.GATSBY_AUTHOR)
   : ([] as any);
 
-const Header: React.FC<{ hideCityToggle?: boolean }> = ({ hideCityToggle }) => {
-  const city = useCity();
+const Header = () => {
   return (
     <nav className="nav has-color-background">
       <div className="nav-container">
@@ -42,14 +42,6 @@ const Header: React.FC<{ hideCityToggle?: boolean }> = ({ hideCityToggle }) => {
         </div>
 
         <div className="nav-title"></div>
-        {!hideCityToggle && (
-          <Link
-            to={city === "minneapolis" ? "/st-paul" : "/minneapolis"}
-            className="button city-toggle is-small has-opposite-background mt-1"
-          >
-            {city === "minneapolis" ? "St. Paul" : "Minneapolis"} Quiz
-          </Link>
-        )}
       </div>
     </nav>
   );
@@ -196,10 +188,7 @@ type MetadataProps = {
 export const PageLayout: React.FC<{
   children: React.ReactNode;
   customMetadata?: MetadataProps;
-  hideCityToggle?: boolean;
-}> = ({ children, customMetadata, hideCityToggle }) => {
-  const city = useCity();
-
+}> = ({ children, customMetadata }) => {
   const slug = customMetadata?.slug || process.env.GATSBY_SLUG;
   const url = `${process.env.GATSBY_DOMAIN}${slug}/`;
   const favicon = `${process.env.GATSBY_DOMAIN}${process.env.GATSBY_SLUG}/favicon.ico`;
@@ -224,11 +213,8 @@ export const PageLayout: React.FC<{
   });
 
   return (
-    <article
-      id="main"
-      className={city === "st-paul" ? "st-paul-style" : "minneapolis-style"}
-    >
-      <Header hideCityToggle={hideCityToggle} />
+    <article id="main" className="minneapolis-style">
+      <Header />
       <Helmet>
         <title>{`${siteName}`}</title>
         <meta name="theme-color" content="#000000" />

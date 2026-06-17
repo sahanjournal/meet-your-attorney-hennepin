@@ -1,6 +1,5 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
-import { useCity } from "../utils";
 
 type ScoreShareDetails = {
   topCandidate: string;
@@ -31,7 +30,7 @@ export const SocialButton: React.FC<{ url: string; ariaLabel?: string }> = ({
 
 const getShareText = (
   platform: "x" | "bluesky" | "email",
-  results?: ScoreShareDetails
+  results?: ScoreShareDetails,
 ) => {
   const sahanHandle =
     platform === "x"
@@ -50,28 +49,27 @@ export const SocialShareButtons: React.FC<{
    */
   results?: ScoreShareDetails;
 }> = ({ results }) => {
-  const city = useCity();
-  const shareUrl = `${process.env.GATSBY_DOMAIN}${process.env.GATSBY_SLUG}/${city}`;
+  const shareUrl = `${process.env.GATSBY_DOMAIN}${process.env.GATSBY_SLUG}`;
   return (
     <>
       <SocialButton
         url={`https://x.com/intent/post?text=${getShareText(
           "x",
-          results
+          results,
         )}&url=${shareUrl}`}
         ariaLabel="Share on X"
       />
       <SocialButton
         url={`https://bsky.app/intent/compose?text=${getShareText(
           "bluesky",
-          results
+          results,
         )} ${shareUrl}`}
         ariaLabel="Share on Bluesky"
       />
       <SocialButton
         url={`mailto:?subject=Meet Your Mayor: 2025&body=${getShareText(
           "email",
-          results
+          results,
         )} ${shareUrl}`}
         ariaLabel="Share via Email"
       />
