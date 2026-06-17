@@ -2,7 +2,6 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { QuizInput, ScoreCard } from "./components/QuizContent";
 import { questionContent } from "./question-content";
-import { questionStpContent } from "./question-stp-content";
 import { track } from "@amplitude/analytics-browser";
 import { City, useCity } from "./utils";
 
@@ -11,9 +10,6 @@ import { City, useCity } from "./utils";
  * responses to quiz questions.
  */
 export const createBlankAnswersList = (city: City) => {
-  const questionContent =
-    city === "st-paul" ? questionStpContent : questionContent;
-
   return Object.entries(questionContent).map((question, i) => ({
     questionNumber: i + 1,
     answer: null,

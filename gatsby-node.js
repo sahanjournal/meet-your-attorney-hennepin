@@ -1,8 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-const candidateListMpls = require("./src/candidate-mpls-list.json");
-const candidateListStp = require("./src/candidate-stp-list.json");
+const candidateList = require("./src/candidate-list.json");
 
 /**
  * Converts string to kebab case (for generating a url slug).
@@ -22,31 +21,17 @@ const kebabCase = (string) => {
  * to it inside the `context` argument.
  */
 
-// For Minneapolis:
-let dynamicPageContentMpls = Object.entries(candidateListMpls).map(
-  (candidate) => candidate[1]
-);
-
-// For St. Paul:
-let dynamicPageContentStp = Object.entries(candidateListStp).map(
-  (candidate) => candidate[1]
+let dynamicPageContent = Object.entries(candidateList).map(
+  (candidate) => candidate[1],
 );
 
 exports.createPages = async function ({ actions }) {
-  dynamicPageContentMpls.forEach(({ name }) => {
+  dynamicPageContent.forEach(({ name }) => {
     const slug = "minneapolis/" + kebabCase(name);
     actions.createPage({
       path: slug,
       component: require.resolve("./src/components/CandidatePage.tsx"),
       context: { slug: slug, candidateName: name, city: "minneapolis" },
-    });
-  });
-  dynamicPageContentStp.forEach(({ name }) => {
-    const slug = "st-paul/" + kebabCase(name);
-    actions.createPage({
-      path: slug,
-      component: require.resolve("./src/components/CandidatePage.tsx"),
-      context: { slug: slug, candidateName: name, city: "st-paul" },
     });
   });
 };
@@ -84,7 +69,7 @@ exports.onPreInit = () => {
     if (fs.existsSync(path.join(__dirname, "public"))) {
       fs.renameSync(
         path.join(__dirname, "public"),
-        path.join(__dirname, "public_dev")
+        path.join(__dirname, "public_dev"),
       );
     }
   }
@@ -95,7 +80,7 @@ exports.onPostBuild = () => {
   if (fs.existsSync(path.join(__dirname, "public_dev"))) {
     fs.renameSync(
       path.join(__dirname, "public_dev"),
-      path.join(__dirname, "public")
+      path.join(__dirname, "public"),
     );
   }
 };
