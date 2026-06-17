@@ -1,0 +1,109 @@
+$font-base-url: "https://s3.us-east-2.amazonaws.com/static.sahanjournal.com/fonts/webfonts/";
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-display: auto;
+  src: url($font-base-url + "LibreFranklin-Bold.woff2") format("woff2");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-display: auto;
+  src: url($font-base-url + "LibreFranklin-BoldItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-display: auto;
+  src: url($font-base-url + "LibreFranklin-Medium.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-display: auto;
+  src: url($font-base-url + "LibreFranklin-MediumItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-display: auto;
+  src: url($font-base-url + "LibreFranklin-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-display: auto;
+  src: url($font-base-url + "LibreFranklin-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-display: auto;
+  src: url($font-base-url + "LibreFranklin-Light.woff2") format("woff2");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Libre Franklin";
+  font-display: auto;
+  src: url($font-base-url + "LibreFranklin-LightItalic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+}
+
+$sans: "Libre Franklin", Helvetica, sans-serif;
+$serif: "Georgia", serif;
+$mono: "Courier", monospace;
+
+@mixin boldface() {
+  font-family: $sans;
+  font-weight: 900;
+}
+
+@mixin boldface-ital() {
+  font-family: $sans;
+  font-weight: 900;
+  font-style: italic;
+}
+
+@mixin medface() {
+  font-family: $sans;
+  font-weight: 700;
+}
+
+@mixin medface-ital() {
+  font-family: $sans;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@mixin bookface() {
+  font-family: $sans;
+  font-weight: 400;
+}
+
+@mixin ital() {
+  font-family: $sans;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@mixin lightface() {
+  font-family: $sans;
+  font-weight: 200;
+}
+
+@mixin lightface-ital() {
+  font-family: $sans;
+  font-weight: 200;
+  font-style: italic;
+}

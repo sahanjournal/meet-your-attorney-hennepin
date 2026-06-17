@@ -1,0 +1,38 @@
+import React, { FC } from "react";
+import { Bobblehead } from "./Illustration";
+import candidateMplsList from "../candidate-mpls-list.json";
+import candidateStpList from "../candidate-stp-list.json";
+import { CandidateName, shuffleArray, useCity } from "../utils";
+import classnames from "classnames";
+
+export const IntroAnimation: FC<{ isMobile?: boolean }> = ({ isMobile }) => {
+  const city = useCity();
+  const candidateList =
+    city === "st-paul" ? candidateStpList : candidateMplsList;
+  const candidateNames: string[] = JSON.parse(
+    JSON.stringify(candidateList)
+  ).map((c: CandidateName) => c.name);
+
+  const candidateNamesShuffled = shuffleArray(candidateNames);
+
+  return (
+    <div
+      className={classnames(
+        "intro-animation column is-flex is-flex-direction-row is-half",
+        isMobile ? "is-hidden-tablet p-0 mt-5" : "is-hidden-mobile"
+      )}
+    >
+      <div className="slider">
+        {candidateNamesShuffled.map((name) => (
+          <Bobblehead
+            key={name}
+            candidateName={name}
+            customClassNames="slide"
+            size="is-1by2"
+            loadWithBlurEffect
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
