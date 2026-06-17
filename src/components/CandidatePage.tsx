@@ -58,7 +58,6 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
     quote3,
     quote4,
     quote5,
-    quote6,
   } = candidateInfo;
 
   return (
@@ -172,7 +171,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
           )}
         </div>
 
-        {[quote1, quote2, quote3, quote4, quote5, quote6].map((quote, i) => (
+        {[quote1, quote2, quote3, quote4, quote5].map((quote, i) => (
           <div className="copy my-2 py-2" key={i}>
             <h3 className="deck has-text-left mb-4 has-text-weight-semibold">
               {OPEN_ENDED_QUESTIONS[i]}
