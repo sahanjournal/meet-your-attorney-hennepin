@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { Bobblehead } from "./Illustration";
 import { useIsCandidatePage } from "../utils";
 import { track } from "@amplitude/analytics-browser";
-import { InternalLink } from "./Links";
+import { Link } from "gatsby";
 
 /**
  * A menu of buttons that link to each candidate page.
@@ -23,7 +23,7 @@ export const CandidateSelectorMenu: React.FC = () => {
       )}
     >
       {candidates.map((candidate, i) => (
-        <InternalLink
+        <Link
           key={i}
           to={`/${candidate.slug}`}
           onClick={() =>
@@ -62,7 +62,7 @@ export const CandidateSelectorMenu: React.FC = () => {
               {candidate.name}
             </div>
           </div>
-        </InternalLink>
+        </Link>
       ))}
     </div>
   );

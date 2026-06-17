@@ -2,13 +2,14 @@ import React, { useEffect, useMemo } from "react";
 import { arrayToNiceList, groupBy, kebabCase, shuffleArray } from "../utils";
 import { formatQuestionContent, generateBlankScorecard } from "./QuizContent";
 import { SocialShareButtons } from "./SocialShareButtons";
-import { InternalLink, SmoothScroll } from "./Links";
+import { SmoothScroll } from "./Links";
 import classnames from "classnames";
 import { CircleIcon } from "./Quiz";
 import { Bobblehead } from "./Illustration";
 import { useAppStore } from "../useAppStore";
 import { track } from "@amplitude/analytics-browser";
 import { EmailMeMyResults } from "./EmailMeMyResults";
+import { Link } from "gatsby";
 
 export const getQuestionsLeftToAnswer = () => {
   const favoriteTopics = useAppStore((state) => state.favoriteTopics);
@@ -493,7 +494,7 @@ const Results: React.FC = () => {
 
                       <div className="buttons mt-5 ml-4">
                         <button className="button">
-                          <InternalLink
+                          <Link
                             to={kebabCase(candidate.candidateName)}
                             onClick={() =>
                               track(
@@ -502,7 +503,7 @@ const Results: React.FC = () => {
                             }
                           >
                             Learn more about {candidate.candidateName}
-                          </InternalLink>{" "}
+                          </Link>{" "}
                         </button>
                       </div>
                     </div>

@@ -1,38 +1,9 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Link as AnchorLink } from "react-scroll";
-import { Link } from "gatsby";
 import { useCity } from "../utils";
 
 const DEFAULT_SAHAN_UTM_PARAMS =
   "?utm_source=link&utm_medium=website&utm_campaign=meet%20your%20mayor%202025%20";
-
-// Reuse Gatsby’s LinkProps
-type InternalLinkProps = {
-  to: string;
-  children: ReactNode;
-  className?: string;
-  activeClassName?: string;
-  partiallyActive?: boolean;
-  onClick?: () => void;
-  replace?: boolean;
-  state?: Record<string, unknown>;
-};
-
-/**
- * An internal link that automatically prefixes the city subdirectory (if applicable).
- */
-export function InternalLink({ to, ...props }: InternalLinkProps) {
-  const city = useCity();
-
-  // Only prefix if we detected a valid city
-  const cityPrefix =
-    city === "minneapolis" || city === "st-paul" ? `/${city}` : "";
-
-  // Normalize the `to` prop so we don’t get double slashes
-  const fullPath = `${cityPrefix}${to.startsWith("/") ? to : `/${to}`}`;
-
-  return <Link to={fullPath} {...props} />;
-}
 
 export const OutboundLink: React.FC<{
   to: string;

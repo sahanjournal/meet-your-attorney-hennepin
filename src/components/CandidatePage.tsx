@@ -1,6 +1,6 @@
 import React from "react";
 import { PageLayout } from "./PageLayout";
-import { InternalLink, OutboundLink } from "./Links";
+import { OutboundLink } from "./Links";
 import { formatCandidateContent } from "./QuizContent";
 import { CityProvider, formatContent, kebabCase } from "../utils";
 import { CandidateSelectorMenu } from "./CandidateSelectorMenu";
@@ -10,6 +10,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { NewsletterSignupBanner } from "./NewsletterSignup";
 import { useAppStore } from "../useAppStore";
 import { getQuestionsLeftToAnswer } from "./Results";
+import { Link } from "gatsby";
 
 const MINNEAPOLIS_OPEN_ENDED_QUESTIONS = [
   "Why are you running for mayor?",
@@ -87,7 +88,7 @@ const CandidatePageContent: React.FC<{ pageContext: any }> = ({
     >
       <div className="container pt-6" style={{ maxWidth: "1100px" }}>
         <div className="eyebrow">
-          <InternalLink to="/">
+          <Link to="/">
             <div
               className="mr-1 is-hidden-mobile"
               style={{
@@ -98,7 +99,7 @@ const CandidatePageContent: React.FC<{ pageContext: any }> = ({
               ↗
             </div>
             Meet your mayor
-          </InternalLink>
+          </Link>
         </div>
         <h1 className="headline has-text-left mt-1">{candidateName}</h1>
         <div className="columns candidate-page-intro">
@@ -140,13 +141,13 @@ const CandidatePageContent: React.FC<{ pageContext: any }> = ({
               <button className="button mb-1">Campaign Website</button>
             </OutboundLink>
           )}
-          <InternalLink to="/">
+          <Link to="/">
             <button className="button is-white mb-1">
               {questionsLeftToAnswer.length === 0
                 ? `Revisit the quiz`
                 : "See if you're a match"}
             </button>
-          </InternalLink>
+          </Link>
         </div>
         <div className="eyebrow has-text-left mt-5 mb-2 is-flex is-align-items-center">
           <div className="mr-3 is-flex-shrink-2">Share Meet Your Mayor:</div>{" "}
