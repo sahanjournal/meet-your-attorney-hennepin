@@ -29,7 +29,11 @@ const byline = process.env.GATSBY_AUTHOR
 
 const Header = () => {
   return (
-    <nav className="nav has-color-background">
+    <nav
+      className="nav has-color-background has-dotted-background"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="nav-container">
         <div className="nav-logo">
           <OutboundLink

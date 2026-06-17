@@ -44,7 +44,7 @@ const Homepage = () => {
         seoDescription: `Candidates for Hennepin County Attorney told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
       }}
     >
-      <div className="hero is-fullheight-with-navbar has-color-background">
+      <div className="hero is-fullheight-with-navbar has-color-background has-dotted-background">
         <IntroAnimation isMobile />
         <div className="hero-body pt-6">
           <div className="columns" style={{ width: "100%" }}>
