@@ -50,6 +50,11 @@ const Homepage = () => {
         <div className="hero-body pt-6">
           <div className="columns" style={{ width: "100%" }}>
             <div className="column is-half">
+              <p className="eyebrow new-banner has-text-left mb-1 has-text-weight-semibold">
+                {"New!".split("").map((letter, i) => (
+                  <span key={i}>{letter}</span>
+                ))}
+              </p>
               <h1 className="headline has-text-left mt-0 mb-3">
                 Meet Your Attorney 2026
               </h1>

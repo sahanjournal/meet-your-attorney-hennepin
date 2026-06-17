@@ -217,6 +217,25 @@ details {
   background-color: transparent;
 }
 
+.new-banner {
+  span {
+    display: inline-block;
+    animation: wave-letter 0.9s ease-in-out infinite;
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.09s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.18s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.27s;
+    }
+  }
+}
+
 // BUTTONS:
 
 .button {
@@ -823,6 +842,16 @@ hr {
   }
   25% {
     transform: translateY(1px);
+  }
+}
+
+@keyframes wave-letter {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }
 
