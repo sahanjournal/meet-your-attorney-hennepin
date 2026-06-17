@@ -225,7 +225,7 @@ export const PageLayout: React.FC<{
   });
 
   return (
-    <article id="main" className="hennepin-style-alternate">
+    <article id="main" className="hennepin-style">
       <Header isHomepage={isHomepage} />
       <Helmet>
         <title>{`${siteName}`}</title>
