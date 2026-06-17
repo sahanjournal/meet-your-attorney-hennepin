@@ -188,7 +188,6 @@ type MetadataProps = {
 export const PageLayout: React.FC<{
   children: React.ReactNode;
   customMetadata?: MetadataProps;
-  hideCityToggle?: boolean;
 }> = ({ children, customMetadata }) => {
   const slug = customMetadata?.slug || process.env.GATSBY_SLUG;
   const url = `${process.env.GATSBY_DOMAIN}${slug}/`;

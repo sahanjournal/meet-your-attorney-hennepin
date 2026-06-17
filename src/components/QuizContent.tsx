@@ -8,7 +8,6 @@ import { groupBy, kebabCase } from "../utils";
  * candidates' responses to quiz questions, with explanations.
  */
 export const formatCandidateContent = () => {
-  // Filter candidates by city:
   const candidates = candidateContent;
 
   const splitCandidateInfo = (text: string) => text.split("|");

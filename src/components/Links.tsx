@@ -1,6 +1,5 @@
 import React from "react";
 import { Link as AnchorLink } from "react-scroll";
-import { useCity } from "../utils";
 
 const DEFAULT_SAHAN_UTM_PARAMS =
   "?utm_source=link&utm_medium=website&utm_campaign=meet%20your%20mayor%202025%20";
@@ -11,13 +10,12 @@ export const OutboundLink: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ to, children, className, style }) => {
-  const city = useCity();
   const isSahanLink = to.includes("sahanjournal.com");
   return (
     <a
       className={className}
       style={style}
-      href={to + (isSahanLink ? DEFAULT_SAHAN_UTM_PARAMS + city : "")}
+      href={to + (isSahanLink ? DEFAULT_SAHAN_UTM_PARAMS : "")}
       target="_blank"
       rel="noopener noreferrer"
     >

@@ -2,7 +2,7 @@ import React from "react";
 import { PageLayout } from "./PageLayout";
 import { OutboundLink } from "./Links";
 import { formatCandidateContent } from "./QuizContent";
-import { CityProvider, formatContent, kebabCase } from "../utils";
+import { formatContent, kebabCase } from "../utils";
 import { CandidateSelectorMenu } from "./CandidateSelectorMenu";
 import { SocialShareButtons } from "./SocialShareButtons";
 import { RecentCoverage } from "./RecentCoverage";
@@ -22,18 +22,6 @@ const MINNEAPOLIS_OPEN_ENDED_QUESTIONS = [
 ];
 
 const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
-  const { city } = pageContext;
-
-  return (
-    <CityProvider city={city}>
-      <CandidatePageContent pageContext={pageContext} />
-    </CityProvider>
-  );
-};
-
-const CandidatePageContent: React.FC<{ pageContext: any }> = ({
-  pageContext,
-}) => {
   const { candidateName } = pageContext;
   const score = useAppStore((state) => state.score);
 

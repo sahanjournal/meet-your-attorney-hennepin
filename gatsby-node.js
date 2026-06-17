@@ -31,7 +31,7 @@ exports.createPages = async function ({ actions }) {
     actions.createPage({
       path: slug,
       component: require.resolve("./src/components/CandidatePage.tsx"),
-      context: { slug: slug, candidateName: name, city: "minneapolis" },
+      context: { slug: slug, candidateName: name },
     });
   });
 };

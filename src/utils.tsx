@@ -1,38 +1,7 @@
-import React, { createContext, useContext } from "react";
+import React from "react";
 import parse from "html-react-parser";
 import { useLocation } from "@reach/router";
 import candidateList from "./candidate-list.json";
-
-export type City = "minneapolis" | "st-paul";
-
-const CityContext = createContext<City | undefined>(undefined);
-
-export function CityProvider({
-  city,
-  children,
-}: {
-  city: City;
-  children: React.ReactNode;
-}) {
-  return <CityContext.Provider value={city}>{children}</CityContext.Provider>;
-}
-
-export function useCity() {
-  const ctx = useContext(CityContext);
-  if (!ctx) throw new Error("useCity must be used within a CityProvider");
-  return ctx;
-}
-
-export const getFullCityName = (city: City) => {
-  switch (city) {
-    case "minneapolis":
-      return "Minneapolis";
-    case "st-paul":
-      return "St. Paul";
-    default:
-      return "Minneapolis";
-  }
-};
 
 export type CandidateName = {
   name: string;

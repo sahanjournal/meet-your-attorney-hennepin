@@ -44,16 +44,14 @@ type AppState = {
 const CURRENT_APP_VERSION = 1;
 
 /**
- * Factory to create a city-specific store.
- * Ensures persistence and migration are scoped separately for each city.
+ * Factory to create a  store.
  */
 function createAppStore() {
-  const cityVersion = CURRENT_APP_VERSION;
   const blankAnswersList = createBlankAnswersList();
   return create<AppState>()(
     persist<AppState>(
       (set) => ({
-        version: cityVersion,
+        version: CURRENT_APP_VERSION,
         favoriteTopics: [],
         setFavoriteTopics: (favoriteTopics) => set({ favoriteTopics }),
         answers: blankAnswersList,
@@ -73,24 +71,24 @@ function createAppStore() {
         },
       }),
       {
-        name: `app-store-hennepin`, // unique key per city
-        version: cityVersion,
+        name: `app-store-hennepin`, // unique key
+        version: CURRENT_APP_VERSION,
         migrate: (persistedState, version): AppState => {
           console.log(`Migrating AppState from version`, version);
 
           const state = persistedState as AppState;
 
-          if (!version || version < cityVersion) {
+          if (!version || version < CURRENT_APP_VERSION) {
             return {
               ...state,
               answers: blankAnswersList,
               favoriteTopics: [],
               highestVisibleQuestion: 1,
               score: null,
-              version: cityVersion,
+              version: CURRENT_APP_VERSION,
             };
           } else {
-            return { ...state, version: cityVersion };
+            return { ...state, version: CURRENT_APP_VERSION };
           }
         },
       },
