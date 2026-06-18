@@ -14,10 +14,6 @@ export const NewsletterSignupBanner: React.FC<{
 
   /**
    * Sign up for Sahan Journal's newsletter via direct API request.
-   *
-   * NOTE: since this API requires we pass it a city, we've hardcoded "minneapolis"
-   * for now since this quiz is most relevant to Minneapolis voters. Any update to this would
-   * require us to change the sahan-mail API function in a separate repo.
    * */
   const submitSahan = async (e: FormEvent<HTMLFormElement>, city: string) => {
     e.preventDefault();
@@ -53,7 +49,7 @@ export const NewsletterSignupBanner: React.FC<{
 
     setStatus("loading");
 
-    submitSahan(e, "minneapolis");
+    submitSahan(e, "hennepin"); // Specific city key for the Hennepin County Attorney quiz.
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
