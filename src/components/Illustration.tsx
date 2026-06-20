@@ -1,9 +1,8 @@
 import React from "react";
+import { withPrefix } from "gatsby";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import classnames from "classnames";
 import { kebabCase } from "../utils";
-
-const USE_LOCAL_IMAGE_PATHS = true;
 
 export const Bobblehead: React.FC<{
   candidateName: string;
@@ -22,9 +21,7 @@ export const Bobblehead: React.FC<{
 }) => {
   const candidatePath = kebabCase(candidateName);
 
-  const imgPathPrefix = USE_LOCAL_IMAGE_PATHS
-    ? `../../illustrations/${candidatePath}`
-    : `${process.env.GATSBY_DOMAIN}${process.env.GATSBY_SLUG}/illustrations/${candidatePath}`;
+  const imgPathPrefix = withPrefix(`illustrations/${candidatePath}`);
 
   const animationDelay = startAnimationRightAway
     ? "0s"
