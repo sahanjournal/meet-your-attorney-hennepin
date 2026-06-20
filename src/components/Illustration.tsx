@@ -23,7 +23,7 @@ export const Bobblehead: React.FC<{
   const candidatePath = kebabCase(candidateName);
 
   const imgPathPrefix = USE_LOCAL_IMAGE_PATHS
-    ? `../illustrations/${candidatePath}`
+    ? `../../illustrations/${candidatePath}`
     : `${process.env.GATSBY_DOMAIN}${process.env.GATSBY_SLUG}/illustrations/${candidatePath}`;
 
   const animationDelay = startAnimationRightAway
