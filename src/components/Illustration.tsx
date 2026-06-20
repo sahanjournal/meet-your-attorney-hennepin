@@ -3,6 +3,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import classnames from "classnames";
 import { kebabCase } from "../utils";
 
+const USE_LOCAL_IMAGE_PATHS = true;
+
 export const Bobblehead: React.FC<{
   candidateName: string;
   size: "is-48x48" | "is-64x64" | "is-96x96" | "is-128x128" | "is-1by2";
@@ -20,7 +22,9 @@ export const Bobblehead: React.FC<{
 }) => {
   const candidatePath = kebabCase(candidateName);
 
-  const imgPathPrefix = `${process.env.GATSBY_DOMAIN}${process.env.GATSBY_SLUG}/illustrations/${candidatePath}`;
+  const imgPathPrefix = USE_LOCAL_IMAGE_PATHS
+    ? `../illustrations/${candidatePath}`
+    : `${process.env.GATSBY_DOMAIN}${process.env.GATSBY_SLUG}/illustrations/${candidatePath}`;
 
   const animationDelay = startAnimationRightAway
     ? "0s"
@@ -32,7 +36,7 @@ export const Bobblehead: React.FC<{
         "image",
         size,
         showBustOnly && "bust-only",
-        customClassNames
+        customClassNames,
       )}
     >
       <LazyLoadImage
