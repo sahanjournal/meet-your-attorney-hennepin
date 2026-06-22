@@ -26,6 +26,8 @@ const getDateUpdated = () => {
   }
 };
 
+const DATE_TO_REMOVE_NEW_BANNER = new Date("2026-08-01T00:00:00Z"); // August 1, 2026
+
 const Homepage = () => {
   const questionsLeftToAnswer = getQuestionsLeftToAnswer();
   const highestVisibleQuestion = useAppStore(
@@ -50,11 +52,13 @@ const Homepage = () => {
         <div className="hero-body pt-6">
           <div className="columns" style={{ width: "100%" }}>
             <div className="column is-half">
-              <p className="eyebrow new-banner has-text-left mb-1 has-text-weight-semibold">
-                {"New!".split("").map((letter, i) => (
-                  <span key={i}>{letter}</span>
-                ))}
-              </p>
+              {new Date() < DATE_TO_REMOVE_NEW_BANNER && (
+                <p className="eyebrow new-banner has-text-left mb-1 has-text-weight-semibold">
+                  {"New!".split("").map((letter, i) => (
+                    <span key={i}>{letter}</span>
+                  ))}
+                </p>
+              )}
               <h1 className="headline has-text-left mt-0 mb-3">
                 Meet Your Attorney 2026
               </h1>
