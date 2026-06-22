@@ -100,7 +100,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
               }}
             >
               <LazyLoadImage
-                src={`../../photos/${kebabCase(candidateName)}-photo.png`}
+                src={`../../photos/${kebabCase(candidateName)}-photo.jpg`}
                 effect="blur"
                 alt={candidateName}
                 style={{
