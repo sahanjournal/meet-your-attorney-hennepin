@@ -26,6 +26,7 @@ $tablet-breakpoint: 1025px;
   &.hennepin-style {
     --sahan-primary: #ffe99f;
     --sahan-primary-light: #fbeec2;
+    --sahan-primary-medium-dark: #fddf7b;
     --sahan-primary-dark: #fdd143;
     --sahan-primary-dark-shadow: #{color.adjust(#fdd143, $lightness: -60%)};
     --sahan-primary-mid-shadow: #{color.adjust(#ffe99f, $lightness: -60%)};
@@ -191,7 +192,11 @@ details {
 
 .newsletter-signup,
 .voter-reg-banner {
-  background-color: var(--sahan-primary-dark);
+  background-color: var(--sahan-primary-medium-dark);
+}
+
+.voter-reg-banner {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .homepage-election-updates .newsletter-signup {
