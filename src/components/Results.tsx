@@ -343,7 +343,12 @@ const Results: React.FC = () => {
               </div>
               <div className="field is-grouped mb-5">
                 <OutboundLink to="https://www.sos.mn.gov/elections-voting/register-to-vote/">
-                  <button className="button is-link is-white">
+                  <button
+                    className="button is-link is-white"
+                    onClick={() => {
+                      track("Clicked on Check my Registration button");
+                    }}
+                  >
                     <span className="is-hidden-mobile">
                       Check my registration
                     </span>
@@ -351,7 +356,12 @@ const Results: React.FC = () => {
                   </button>
                 </OutboundLink>
                 <OutboundLink to="https://www.hennepincounty.gov/-/media/Hennepin-Headless/Hennepin-Gov/services/elections/voter-guide.pdf">
-                  <button className="button is-link is-white">
+                  <button
+                    className="button is-link is-white"
+                    onClick={() => {
+                      track("Clicked on View Voter Guide button");
+                    }}
+                  >
                     View Voter Guide
                   </button>
                 </OutboundLink>
