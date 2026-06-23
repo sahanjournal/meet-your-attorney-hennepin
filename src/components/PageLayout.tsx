@@ -10,8 +10,6 @@ import "../styles/app.scss";
 //@ts-ignore
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { Script } from "gatsby";
-
-// DISABLE AMPLITUDE TRACKING FOR NOW:
 import { init } from "@amplitude/analytics-browser";
 
 const AMPLITUDE_PUBLIC_KEY = "2bc4243de79bb364ec7c273d6ca31e47"; // Sahan Journal's Amplitude Public Key
