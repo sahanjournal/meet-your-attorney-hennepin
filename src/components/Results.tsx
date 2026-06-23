@@ -2,7 +2,7 @@ import React, { useEffect, useMemo } from "react";
 import { arrayToNiceList, groupBy, kebabCase, shuffleArray } from "../utils";
 import { formatQuestionContent, generateBlankScorecard } from "./QuizContent";
 import { SocialShareButtons } from "./SocialShareButtons";
-import { SmoothScroll } from "./Links";
+import { OutboundLink, SmoothScroll } from "./Links";
 import classnames from "classnames";
 import { CircleIcon } from "./Quiz";
 import { Bobblehead } from "./Illustration";
@@ -339,24 +339,20 @@ const Results: React.FC = () => {
                 Register to vote before heading to the polls!
               </div>
               <div className="field is-grouped mb-5">
-                <button className="button is-link is-white">
-                  Check my registration
-                </button>
-                <button className="button is-link is-white">
-                  View Voter Guide
-                </button>
+                <OutboundLink to="https://www.sos.mn.gov/elections-voting/register-to-vote/">
+                  <button className="button is-link is-white">
+                    Check my registration
+                  </button>
+                </OutboundLink>
+                <OutboundLink to="https://www.hennepincounty.gov/-/media/Hennepin-Headless/Hennepin-Gov/services/elections/voter-guide.pdf">
+                  <button className="button is-link is-white">
+                    View Voter Guide
+                  </button>
+                </OutboundLink>
               </div>
               <p className="eyebrow mb-2"> Take your quiz results with you: </p>
               <EmailMeMyResults topMatches={score} />
             </div>
-
-            {/* Ready to Vote? 
-
-            Make sure you are registered before heading to the polls
-            [Check my registration] [View Voter Guide]
-
-            Take your quiz results with you: 
-            [EMAIL THEM TO ME] [SEND] */}
 
             {score.map((candidate, i) => {
               const scoreBySubject = Object.entries(
