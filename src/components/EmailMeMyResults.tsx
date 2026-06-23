@@ -64,10 +64,7 @@ export const EmailMeMyResults: React.FC<{ topMatches: ScoreCard }> = ({
 
   return (
     <div>
-      <form
-        onSubmit={handleSubmit()}
-        className="is-flex is-justify-content-center"
-      >
+      <form onSubmit={handleSubmit()} className="is-flex">
         <div className="field">
           <div className="is-flex is-align-items-center">
             <div className="control mr-3 is-flex-grow-1">

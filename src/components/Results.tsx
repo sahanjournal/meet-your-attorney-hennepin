@@ -2,7 +2,7 @@ import React, { useEffect, useMemo } from "react";
 import { arrayToNiceList, groupBy, kebabCase, shuffleArray } from "../utils";
 import { formatQuestionContent, generateBlankScorecard } from "./QuizContent";
 import { SocialShareButtons } from "./SocialShareButtons";
-import { SmoothScroll } from "./Links";
+import { OutboundLink, SmoothScroll } from "./Links";
 import classnames from "classnames";
 import { CircleIcon } from "./Quiz";
 import { Bobblehead } from "./Illustration";
@@ -309,31 +309,18 @@ const Results: React.FC = () => {
                   />
                 </div>
 
-                <EmailMeMyResults topMatches={score} />
-
                 <div
-                  className="is-hidden-tablet mt-4 mb-5"
+                  className="mt-4 mb-3"
                   onClick={() => {
                     window.scrollTo({ top: 0 });
                     resetAnswers();
                   }}
                 >
-                  <button className="button is-link is-white is-pulled-right mt-0">
+                  <button className="button is-link is-small is-white is-pulled-right mt-0">
                     Take Quiz Again
                   </button>
                 </div>
               </div>
-            </div>
-            <div
-              className="is-hidden-mobile"
-              onClick={() => {
-                window.scrollTo({ top: 0 });
-                resetAnswers();
-              }}
-            >
-              <button className="button is-link is-white is-pulled-right mt-0 ml-3">
-                Take Quiz Again
-              </button>
             </div>
 
             <div className="deck has-text-left ml-0 mt-5">
@@ -345,6 +332,32 @@ const Results: React.FC = () => {
                     .map((candidate) => candidate.candidateName),
                 )}
               </span>
+            </div>
+
+            <div className="voter-reg-banner p-5">
+              <div className="is-hidden-mobile deck has-text-weight-semibold has-text-left mt-0 mb-3">
+                Register to vote before heading to the polls!
+              </div>
+              <div className="is-hidden-tablet eyebrow mt-0 mb-4">
+                Register to vote before heading to the polls!
+              </div>
+              <div className="field is-grouped mb-5">
+                <OutboundLink to="https://www.sos.mn.gov/elections-voting/register-to-vote/">
+                  <button className="button is-link is-white">
+                    <span className="is-hidden-mobile">
+                      Check my registration
+                    </span>
+                    <span className="is-hidden-tablet">Check registration</span>
+                  </button>
+                </OutboundLink>
+                <OutboundLink to="https://www.hennepincounty.gov/-/media/Hennepin-Headless/Hennepin-Gov/services/elections/voter-guide.pdf">
+                  <button className="button is-link is-white">
+                    View Voter Guide
+                  </button>
+                </OutboundLink>
+              </div>
+              <p className="eyebrow mb-2"> Take your quiz results with you: </p>
+              <EmailMeMyResults topMatches={score} />
             </div>
 
             {score.map((candidate, i) => {
