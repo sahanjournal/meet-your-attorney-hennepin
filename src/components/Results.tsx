@@ -309,8 +309,6 @@ const Results: React.FC = () => {
                   />
                 </div>
 
-                <EmailMeMyResults topMatches={score} />
-
                 <div
                   className="is-hidden-tablet mt-4 mb-5"
                   onClick={() => {
@@ -346,6 +344,34 @@ const Results: React.FC = () => {
                 )}
               </span>
             </div>
+
+            <div className="voter-reg-banner p-3">
+              <div className="deck has-text-weight-semibold has-text-left mb-2">
+                Ready to Vote?
+              </div>
+
+              <p className="mb-3">
+                Make sure you are registered before heading to the polls
+              </p>
+              <div className="field is-grouped">
+                <button className="button is-link is-white">
+                  Check my registration
+                </button>
+                <button className="button is-link is-white">
+                  View Voter Guide
+                </button>
+              </div>
+              <p className="mb-3"> Take your quiz results with you: </p>
+              <EmailMeMyResults topMatches={score} />
+            </div>
+
+            {/* Ready to Vote? 
+
+            Make sure you are registered before heading to the polls
+            [Check my registration] [View Voter Guide]
+
+            Take your quiz results with you: 
+            [EMAIL THEM TO ME] [SEND] */}
 
             {score.map((candidate, i) => {
               const scoreBySubject = Object.entries(
