@@ -310,28 +310,17 @@ const Results: React.FC = () => {
                 </div>
 
                 <div
-                  className="is-hidden-tablet mt-4 mb-5"
+                  className="mt-4 mb-3"
                   onClick={() => {
                     window.scrollTo({ top: 0 });
                     resetAnswers();
                   }}
                 >
-                  <button className="button is-link is-white is-pulled-right mt-0">
+                  <button className="button is-link is-small is-white is-pulled-right mt-0">
                     Take Quiz Again
                   </button>
                 </div>
               </div>
-            </div>
-            <div
-              className="is-hidden-mobile"
-              onClick={() => {
-                window.scrollTo({ top: 0 });
-                resetAnswers();
-              }}
-            >
-              <button className="button is-link is-white is-pulled-right mt-0 ml-3">
-                Take Quiz Again
-              </button>
             </div>
 
             <div className="deck has-text-left ml-0 mt-5">
@@ -346,14 +335,14 @@ const Results: React.FC = () => {
             </div>
 
             <div className="voter-reg-banner p-3">
-              <div className="deck has-text-weight-semibold has-text-left mb-2">
+              <div className="deck has-text-weight-semibold has-text-left mb-4">
                 Ready to Vote?
               </div>
 
-              <p className="mb-3">
+              <p className="eyebrow mb-2">
                 Make sure you are registered before heading to the polls
               </p>
-              <div className="field is-grouped">
+              <div className="field is-grouped mb-5">
                 <button className="button is-link is-white">
                   Check my registration
                 </button>
@@ -361,7 +350,7 @@ const Results: React.FC = () => {
                   View Voter Guide
                 </button>
               </div>
-              <p className="mb-3"> Take your quiz results with you: </p>
+              <p className="eyebrow mb-2"> Take your quiz results with you: </p>
               <EmailMeMyResults topMatches={score} />
             </div>
 
