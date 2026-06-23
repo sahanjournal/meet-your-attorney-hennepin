@@ -335,13 +335,19 @@ const Results: React.FC = () => {
             </div>
 
             <div className="voter-reg-banner p-5">
-              <div className="deck has-text-weight-semibold has-text-left mt-0 mb-3">
+              <div className="is-hidden-mobile deck has-text-weight-semibold has-text-left mt-0 mb-3">
+                Register to vote before heading to the polls!
+              </div>
+              <div className="is-hidden-tablet eyebrow mt-0 mb-4">
                 Register to vote before heading to the polls!
               </div>
               <div className="field is-grouped mb-5">
                 <OutboundLink to="https://www.sos.mn.gov/elections-voting/register-to-vote/">
                   <button className="button is-link is-white">
-                    Check my registration
+                    <span className="is-hidden-mobile">
+                      Check my registration
+                    </span>
+                    <span className="is-hidden-tablet">Check registration</span>
                   </button>
                 </OutboundLink>
                 <OutboundLink to="https://www.hennepincounty.gov/-/media/Hennepin-Headless/Hennepin-Gov/services/elections/voter-guide.pdf">
