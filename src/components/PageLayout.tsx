@@ -12,9 +12,9 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { Script } from "gatsby";
 
 // DISABLE AMPLITUDE TRACKING FOR NOW:
-// import { init } from "@amplitude/analytics-browser";
+import { init } from "@amplitude/analytics-browser";
 
-// const AMPLITUDE_PUBLIC_KEY = "FILL IN YOUR KEY HERE";
+const AMPLITUDE_PUBLIC_KEY = "2bc4243de79bb364ec7c273d6ca31e47"; // Sahan Journal's Amplitude Public Key
 
 const SAHAN_SITE_LINKS = {
   website: "https://sahanjournal.com/",
@@ -221,7 +221,7 @@ export const PageLayout: React.FC<{
 
   // Initialize Amplitude Tracking:
   useEffect(() => {
-    // init(AMPLITUDE_PUBLIC_KEY);
+    init(AMPLITUDE_PUBLIC_KEY);
   });
 
   return (
