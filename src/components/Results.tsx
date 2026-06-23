@@ -335,18 +335,14 @@ const Results: React.FC = () => {
             </div>
 
             <div className="voter-reg-banner p-5">
-              <div className="deck has-text-weight-semibold has-text-left mt-0 mb-4">
-                Ready to Vote?
+              <div className="deck has-text-weight-semibold has-text-left mt-0 mb-3">
+                Register to vote before heading to the polls!
               </div>
-
-              <p className="eyebrow mb-3">
-                Make sure you are registered before heading to the polls:
-              </p>
               <div className="field is-grouped mb-5">
-                <button className="button is-small is-link is-white">
+                <button className="button is-link is-white">
                   Check my registration
                 </button>
-                <button className="button is-small is-link is-white">
+                <button className="button is-link is-white">
                   View Voter Guide
                 </button>
               </div>
