@@ -10,7 +10,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { NewsletterSignupBanner } from "./NewsletterSignup";
 import { useAppStore } from "../useAppStore";
 import { getQuestionsLeftToAnswer } from "./Results";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 
 const OPEN_ENDED_QUESTIONS = [
   "Why are you running for mayor?",
@@ -60,6 +60,8 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
     quote5,
   } = candidateInfo;
 
+  const imgPath = withPrefix(`photos/${kebabCase(candidateName)}-photo.jpg`);
+
   return (
     <PageLayout
       customMetadata={{
@@ -100,7 +102,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
               }}
             >
               <LazyLoadImage
-                src={`../../photos/${kebabCase(candidateName)}-photo.jpg`}
+                src={imgPath}
                 effect="blur"
                 alt={candidateName}
                 style={{
