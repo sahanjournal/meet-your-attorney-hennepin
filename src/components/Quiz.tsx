@@ -443,7 +443,7 @@ const Quiz = () => {
                           <SmoothScroll
                             key={i}
                             enableActiveClass
-                            className="button-link is-small mr-1 copy"
+                            className="button-link mr-1 copy"
                             style={{
                               pointerEvents: questionGroupSeen ? "all" : "none",
                             }}
