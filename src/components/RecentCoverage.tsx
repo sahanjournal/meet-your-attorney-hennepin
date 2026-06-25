@@ -9,20 +9,16 @@ const DONATION_URL = "https://sahanjournal.fundjournalism.org/";
 
 const DEFAULT_LINKS = [
   {
-    text: "Who’s running for Minneapolis mayor? Six candidates address immigration, homelessness and police reform.",
-    href: "https://sahanjournal.com/democracy-politics/minneapolis-mayoral-profile/",
+    text: "Minnesota officials sue federal government for evidence in Renee Good, Alex Pretti killings",
+    href: "https://sahanjournal.com/public-safety/keith-ellison-mary-moriarty-sue-federal-government-good-pretti-evidence/",
   },
   {
-    text: "DFL revokes Omar Fateh’s endorsement in Minneapolis mayoral race",
-    href: "https://sahanjournal.com/democracy-politics/dfl-revokes-omar-fateh-endorsement-minneapolis-mayor-race/",
+    text: "Hennepin County Attorney files felony charges against ICE agent for pointing gun at driver",
+    href: "https://sahanjournal.com/public-safety/hennepin-county-attorney-felony-charges-ice-agent-assault-gun/",
   },
   {
-    text: "Will Minneapolis’ Somali voters decide the mayoral race between Jacob Frey and Omar Fateh?",
-    href: "https://sahanjournal.com/democracy-politics/minneapolis-mayor-jacob-frey-omar-fateh-election/",
-  },
-  {
-    text: "Minnesota Rep. Kaohly Vang Her announces run for St. Paul mayor",
-    href: "https://sahanjournal.com/democracy-politics/kaohly-vang-her-st-paul-mayor-election-melvin-carter/",
+    text: "ICE agent charged in shooting of Venezuelan man in north Minneapolis",
+    href: "https://sahanjournal.com/immigration/ice-agent-charged-north-minneapolis-shooting/",
   },
 ];
 

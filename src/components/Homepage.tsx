@@ -147,8 +147,9 @@ const Homepage = () => {
               >
                 We asked the candidates additional questions that didn't make it
                 into the quiz. Click on the candidates' pictures below to read
-                more about why they're running for office, and their views on
-                homeless encampments, police reform and more.
+                more about why they're running for office, their priorities,
+                their views on racial disparities in the criminal justice system
+                and more.
               </p>
               <CandidateSelectorMenu />
             </div>
