@@ -13,12 +13,11 @@ import { getQuestionsLeftToAnswer } from "./Results";
 import { Link, withPrefix } from "gatsby";
 
 const OPEN_ENDED_QUESTIONS = [
-  "Why are you running for mayor?",
-  "As mayor, how will you advocate for immigrants and communities of color?",
-  "Should homeless encampments be allowed to exist in Minneapolis? When should the city clear homeless encampments?",
-  "Do you agree with how the city handled its presence at the federal drug investigation on Lake Street in June, and how can Minneapolis improve its response in future incidents?",
-  "Do you support the policing reforms in the recently abandoned federal consent decree against Minneapolis police? If yes, how should the city ensure these reforms are enacted?",
-  "How can the city make up for lost federal grants and revenue due to cuts from the Trump administration?",
+  "Why are you running for Hennepin County attorney?",
+  "What are your priorities for the county attorney's office?",
+  "What do you plan to do differently from your predecessor?",
+  "What racial and socio-economic disparities in the criminal justice system have you identified, and how will you address them as county attorney?",
+  "How can the office change practices in civil court matters to improve services to the public and address disparities?",
 ];
 
 const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
