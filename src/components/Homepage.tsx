@@ -26,8 +26,6 @@ const getDateUpdated = () => {
   }
 };
 
-const DATE_TO_REMOVE_NEW_BANNER = new Date("2026-08-01T00:00:00Z"); // August 1, 2026
-
 const Homepage = () => {
   const questionsLeftToAnswer = getQuestionsLeftToAnswer();
   const highestVisibleQuestion = useAppStore(
@@ -52,24 +50,20 @@ const Homepage = () => {
         <div className="hero-body pt-6">
           <div className="columns" style={{ width: "100%" }}>
             <div className="column is-half">
-              {new Date() < DATE_TO_REMOVE_NEW_BANNER && (
-                <p className="eyebrow new-banner has-text-left mb-1 has-text-weight-semibold">
-                  {"New!".split("").map((letter, i) => (
-                    <span key={i}>{letter}</span>
-                  ))}
-                </p>
-              )}
+              <p className="eyebrow new-banner has-text-left mb-1 has-text-weight-semibold">
+                Hennepin County
+              </p>
               <h1 className="headline has-text-left mt-0 mb-3">
-                Meet Your Attorney 2026
+                Meet Your County Attorney 2026
               </h1>
               <div className="attribution">
                 <p className="eyebrow has-text-left mb-2">
                   Updated: {getDateUpdated()}
                 </p>
                 <p className="deck has-text-left" style={{ maxWidth: "600px" }}>
-                  Who should you rank on your ballot to be the next Hennepin
-                  County Attorney? Take the same quiz the candidates did and
-                  find your closest match.
+                  Who should you vote for on your primary election ballot to be
+                  the next Hennepin County attorney? Take the same quiz the
+                  candidates did and find your closest match.
                 </p>
                 <div className="is-flex is-flex-direction-column mt-5 mb-6">
                   <SmoothScroll
@@ -111,7 +105,7 @@ const Homepage = () => {
                 </div>
                 <div className="eyebrow has-text-left mt-4 mb-2 is-flex is-align-items-center">
                   <div className="mr-3 is-flex-shrink-2 pl-4">
-                    Share Meet Your Attorney:
+                    Share Meet Your County Attorney:
                   </div>{" "}
                   <SocialShareButtons />
                 </div>
@@ -153,8 +147,9 @@ const Homepage = () => {
               >
                 We asked the candidates additional questions that didn't make it
                 into the quiz. Click on the candidates' pictures below to read
-                more about why they're running for office, and their views on
-                homeless encampments, police reform and more.
+                more about why they're running for office, their priorities,
+                their views on racial disparities in the criminal justice system
+                and more.
               </p>
               <CandidateSelectorMenu />
             </div>

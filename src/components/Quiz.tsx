@@ -77,15 +77,20 @@ const Quiz = () => {
           <div className="container" style={{ maxWidth: "600px" }}>
             <div>
               <h1 className="headline has-text-left">
-                The Meet Your Attorney Quiz
+                The Meet Your County Attorney Quiz
               </h1>
               <p className="copy has-text-left mt-5">
-                Voters of Hennepin County: Still trying to figure out who to
-                rank for Hennepin County Attorney? This quiz will help you
-                decide by matching your responses to TK questions the candidates
-                also answered on urgent issues facing the county. Early voting
-                has already started and the general election is on November 4,
-                2025.
+                Voters of Hennepin County: Still trying to figure out which
+                Hennepin County attorney candidate to vote for in the primary
+                election? This quiz will help you decide by matching your
+                responses to 11 questions the candidates also answered on urgent
+                issues facing Hennepin County.
+              </p>
+
+              <p className="copy has-text-left mt-2">
+                Early voting has already started and the primary election is on
+                August 11, 2026. The top two vote-getters will advance to the
+                Nov. 3 general election.
               </p>
 
               <div
@@ -169,7 +174,7 @@ const Quiz = () => {
                     className="eyebrow is-link is-inline-block"
                     onClick={() => toggleMethodology()}
                   >
-                    How Meet Your Attorney Works{" "}
+                    How Meet Your County Attorney Works{" "}
                     <span>{methodologyVisible ? "-" : "+"}</span>
                   </button>
 
@@ -438,7 +443,7 @@ const Quiz = () => {
                           <SmoothScroll
                             key={i}
                             enableActiveClass
-                            className="button-link is-small mr-1 copy"
+                            className="button-link mr-1 copy"
                             style={{
                               pointerEvents: questionGroupSeen ? "all" : "none",
                             }}

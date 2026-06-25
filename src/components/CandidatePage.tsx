@@ -51,7 +51,6 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
     age,
     occupation,
     city,
-    party,
     quote1,
     quote2,
     quote3,
@@ -66,12 +65,12 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
       customMetadata={{
         slug: `${process.env.GATSBY_SLUG}`,
         shareImageFilename: "social-image.jpg",
-        siteName: `${candidateName} | "Meet Your Hennepin County Attorney 2026",
+        siteName: `${candidateName} | "Meet Your Hennepin County Attorney",
         }`,
-        seoHeadline: `${candidateName}: Meet Your Attorney`,
-        socialHeadline: `${candidateName}: Meet Your Attorney`,
-        socialDescription: `Candidates for Hennepin County Attorney told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
-        seoDescription: `Candidates for Hennepin County Attorney told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
+        seoHeadline: `${candidateName}: Meet Your Hennepin County Attorney`,
+        socialHeadline: `${candidateName}: Meet Your Hennepin County Attorney`,
+        socialDescription: `Candidates for Hennein County Attorney told us where they stand on issues. Which is the top match for you? Find out before the August 11 primary election.`,
+        seoDescription: `Which candidate for Hennepin County Attorney is a top match for you? Take our quiz to find out before the August 11 primary election.`,
       }}
     >
       <div className="container pt-6" style={{ maxWidth: "1100px" }}>
@@ -138,7 +137,9 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
           </Link>
         </div>
         <div className="eyebrow has-text-left mt-5 mb-2 is-flex is-align-items-center">
-          <div className="mr-3 is-flex-shrink-2">Share Meet Your Attorney:</div>{" "}
+          <div className="mr-3 is-flex-shrink-2">
+            Share Meet Your County Attorney:
+          </div>{" "}
           <SocialShareButtons />
         </div>
 
@@ -147,13 +148,6 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
             <div className="eyebrow has-text-left mt-0 mb-4">
               <span className="has-text-weight-semibold">Age: </span>
               {age}
-            </div>
-          )}
-
-          {!!party && (
-            <div className="eyebrow has-text-left mb-4">
-              <span className="has-text-weight-semibold">Party: </span>
-              {party}
             </div>
           )}
 

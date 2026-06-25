@@ -87,6 +87,7 @@ $tablet-breakpoint: 1025px;
 .button-link {
   color: colors.$sahan-black;
   font-family: fonts.$sans;
+  text-wrap-style: pretty;
 }
 
 .deck {
@@ -332,11 +333,6 @@ details {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;
-
-  &.is-small {
-    font-size: 0.875rem;
-    letter-spacing: -0.3px;
-  }
 
   &:hover {
     opacity: 0.6;

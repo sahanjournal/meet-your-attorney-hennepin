@@ -39,8 +39,8 @@ const getShareText = (
       ? "@sahanjournal"
       : "Sahan Journal";
   return !!results
-    ? `I'm a ${results.matchScore}%25 match with ${results.topCandidate} on the Meet Your Attorney quiz! Find your own match, powered by ${sahanHandle}:`
-    : `Check out the Meet Your Attorney quiz from ${sahanHandle}!`;
+    ? `I'm a ${results.matchScore}%25 match with ${results.topCandidate} on the Meet Your County Attorney quiz! Find your own match, powered by ${sahanHandle}:`
+    : `Check out the Meet Your County Attorney quiz from ${sahanHandle}!`;
 };
 
 export const SocialShareButtons: React.FC<{

@@ -61,7 +61,7 @@ export const MatchingCandidates: FC<{
       className={classnames(
         "is-flex",
         "is-flex-wrap-wrap",
-        isExpanded ? "is-flex-direction-column" : "is-flex-direction-row"
+        isExpanded ? "is-flex-direction-column" : "is-flex-direction-row",
       )}
     >
       {candidates.map((candidate, i) => {
@@ -81,7 +81,7 @@ export const MatchingCandidates: FC<{
             <div className="mb-5 mt-4">
               <p className="label">
                 {!!quote ? (
-                  quote
+                  formatContent(quote)
                 ) : isSkipped ? (
                   <span>
                     {abbreviatedName} skipped this response <br />
@@ -128,7 +128,7 @@ export const MatchingCandidates: FC<{
         <div
           className={classnames(
             "mx-2 is-inline-block ",
-            isUserSelection ? "mt-3" : "ml-4"
+            isUserSelection ? "mt-3" : "ml-4",
           )}
         >
           {!isUserSelection && (
@@ -152,7 +152,7 @@ export const MatchingCandidates: FC<{
         <div
           className={classnames(
             "label has-text-left ml-4",
-            isUserSelection && "has-text-weight-semibold"
+            isUserSelection && "has-text-weight-semibold",
           )}
         >
           No matching candidates
