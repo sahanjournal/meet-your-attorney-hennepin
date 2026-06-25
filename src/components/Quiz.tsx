@@ -14,8 +14,8 @@ export const CircleIcon: FC<{ filledIn?: boolean }> = ({ filledIn }) => (
   <div
     className="is-inline-block"
     style={{
-      width: "12px",
-      height: "12px",
+      width: "10px",
+      height: "10px",
       borderRadius: "100%",
       backgroundColor: !!filledIn ? "#0d0e10" : "transparent",
       boxShadow: !!filledIn ? "none" : "0px 0px 0px 1px #0d0e10 inset",
@@ -438,7 +438,7 @@ const Quiz = () => {
                           <SmoothScroll
                             key={i}
                             enableActiveClass
-                            className="button-link mr-1 copy"
+                            className="button-link is-small mr-1 copy"
                             style={{
                               pointerEvents: questionGroupSeen ? "all" : "none",
                             }}
