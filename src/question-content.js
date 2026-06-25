@@ -1,126 +1,140 @@
 export const questionContent = {
   question1: {
     title:
-      "Do you support the policing reforms in the recently abandoned federal consent decree against Minneapolis police?",
-    subject: "Public Safety",
-    tellMeMore:
-      "Following the murder of George Floyd, the U.S. Department of Justice under President Joe Biden conducted a pattern or practice investigation of the Minneapolis Police Department and found systemic abuse of the public’s constitutional rights. The DOJ and Minneapolis negotiated a consent decree that mandated police reform, yet President Donald Trump withdrew from the consent decree last spring.",
-    option1: "Yes, and we should still implement them.",
-    option2: "No, because we need a complete rebuild of the police department.",
+      "The current Hennepin County attorney continues to seek charges against federal immigration agents for their conduct during Operation Metro Surge earlier this year. Do you plan to continue the prosecutions of the agents already charged?",
+    subject: "Operation Metro Surge",
+    tellMeMore: "TK",
+    option1:
+      "Yes, I will continue to prosecute the federal agents already charged.",
+    option2: "No, I will drop the charges against the federal agent.",
     option3:
-      "No, because change will only come if workers overthrow the system of capitalism.",
+      "I will evaluate the evidence and make my decision only after I am elected.",
     option4: "",
   },
   question2: {
-    title: "Who should respond to mental health crises 911 calls?",
-    subject: "Public Safety",
-    tellMeMore:
-      "The U.S. Department of Justice in 2023 found that Minneapolis police engaged in a pattern of discrimination against people with behavioral health disabilities. The question of the police’s role during mental health emergencies has been debated in Minneapolis for years.",
-    option1: "Police",
-    option2: "Mental health worker",
-    option3: "Other",
+    title:
+      "Do you plan to continue investigating the killings of Renee Good and Alex Pretti?",
+    subject: "Operation Metro Surge",
+    tellMeMore: "",
+    option1: "Yes, I will actively continue both investigations.",
+    option2:
+      "No, I will defer to federal officials and focus the office’s efforts elsewhere.",
+    option3:
+      "I will not take a lead role in the investigations but wait for the BCA to finish their investigation.",
     option4: "",
   },
   question3: {
     title:
-      "Should the city contract with the Rev. Jerry McAfee on violence prevention work?",
-    subject: "Public Safety",
-    tellMeMore:
-      "City Council prevented a $650,000 contract for violence prevention to the outspoken and sometimes controversial pastor’s nonprofit after he went on a rant at a city council meeting earlier this year. City Council is slated to consider awarding the contract again later this year.",
-    option1: "Yes",
-    option2: "No",
-    option3: "Don’t know",
+      "What is the Hennepin County Attorney Office’s role in holding federal officials accountable for their conduct during Operation Metro Surge?",
+    subject: "Operation Metro Surge",
+    tellMeMore: "TK",
+    option1:
+      "The office is responsible for prosecuting unlawful conduct in its jurisdiction, regardless of whether the alleged offender is a federal law enforcement officer.",
+    option2:
+      "The office is not at all responsible for the conduct of federal law enforcement officers, who should be held accountable by their agency or federal prosecutors.",
+    option3:
+      "The office is not solely responsible for the conduct of federal law enforcement officers in its jurisdiction, but should assist federal prosecutors in holding them accountable.",
     option4: "",
   },
   question4: {
     title:
-      "Should Minneapolis ban assault rifles on the city level in light of the Annunciation Catholic Church shooting?",
-    subject: "Public Safety",
-    tellMeMore:
-      "In August, a former student of Annunciation Catholic School attacked students and parishioners during the school year’s inaugural mass and used an assault rifle to fire hundreds of bullets inside the church, killing two young children and wounding 21 others. The mass shooting sparked a debate on gun control.",
-    option1: "Yes",
-    option2: "No",
-    option3: "Maybe",
-    option4: "Don’t know",
+      "The county attorney’s office has taken a strong position investigating the conduct of federal agents during Operation Metro Surge. Does it have a responsibility to investigate how local police and sheriff’s deputies treated the public while providing crowd control at several enforcement scenes?",
+    subject: "Operation Metro Surge",
+    tellMeMore: "TK",
+    option1:
+      "Yes, the Hennepin County attorney has an obligation to gather evidence and victim accounts regarding the conduct of local law enforcement officers in its jurisdiction, and to bring charges when possible.",
+    option2:
+      "No, local law enforcement agencies are responsible for holding their own officers accountable in those instances and should issue discipline internally if needed.",
+    option3:
+      "The Hennepin County attorney has some discretion in investigating the conduct of local law enforcement offices, but officer conduct during Operation Metro Surge did not meet that threshold.",
+    option4: "",
   },
   question5: {
     title:
-      "Do you support the city’s sanctuary policy, and should it be expanded?",
-    subject: "Immigration",
-    tellMeMore:
-      "Minneapolis city policy currently prohibits local law enforcement from asking people about their immigration status or making “any law enforcement action for the purpose of detecting the presence of undocumented persons.” The Minneapolis Police Department is also prohibited from “operating its programs for the purpose of enforcing federal immigration laws.”",
-    option1: "Yes, and it should be expanded.",
-    option2: "Yes, and it’s fine as it is.",
-    option3: "No.",
+      "How do you balance holding juveniles accountable for criminal activity while providing room for meaningful rehabilitation?",
+    subject: "Youth prosecution",
+    tellMeMore: "TK",
+    option1:
+      "Continue to put an emphasis on rehabilitation outside of prison for most juvenile offenders, including repeat offenders.",
+    option2:
+      "Largely maintain the current emphasis on rehabilitation over prison time, but use slightly more strict enforcement with some cases, including violent crimes and repeat offenses.",
+    option3:
+      "Begin seeking longer sentences and prison time for more juvenile offenders as a way to reduce repeat offenders.",
     option4: "",
   },
   question6: {
     title:
-      "Did the city violate its sanctuary policy during the June Lake Street raid?",
-    subject: "Immigration",
-    tellMeMore:
-      "Last June, U.S. Immigration and Customs Enforcement agents took part in a federal raid of a Lake Street restaurant that was the target of a drug trafficking investigation. As people gathered to protest ICE at the raid, Minneapolis police officers showed up and conducted crowd control.",
-    option1: "Yes",
-    option2: "No",
-    option3: "Don’t know",
+      "What’s your philosophy regarding prison time for juveniles convicted of violent crimes? What risk should the general public shoulder in that equation?",
+    subject: "Youth prosecution",
+    tellMeMore: "",
+    option1:
+      "Emphasize rehabilitation instead of prison time in as many cases as possible.",
+    option2:
+      "Convictions for violent crimes should always result in prison sentences regardless of age.",
+    option3: "Take a case-by-case approach.",
     option4: "",
   },
   question7: {
     title:
-      "How can the city make up for lost federal grants and revenue due to cuts from the Trump administration?",
-    subject: "Federal Funding",
-    tellMeMore:
-      "The Trump administration has cut several federal grants and funding that cities like Minneapolis rely on.",
+      "What level of collaboration do you envision between the Hennepin County Attorney’s Office and local law enforcement agencies in the county?",
+    subject: "Local policing",
+    tellMeMore: "",
     option1:
-      "Deepen relationship with the county and the state, and encourage foundations to donate to the city.",
+      "A symbiotic relationship that involves the alignment of policies and mindset relating to which cases should be charged and what crimes should be prioritized.",
     option2:
-      "Sue the Trump administration over proposed federal cuts and reduce non-essential and lower priority city projects without cutting core services.",
+      "A relationship that only involves steps necessary for charging crimes like the sharing of evidence.",
     option3:
-      "Pushing for a massive public works program to provide employment at union-scale wages.",
-    option4:
-      "Lobbying the State of Minnesota to allow the City of Minneapolis to institute a local option income tax to ensure the wealthy pay their fair share.",
+      "The county attorney’s office works with local agencies to build cases for prosecution, but should also serve as a checks-and-balances system to ensure that officers are not abusing their authority while investigating cases, and should not take cases from officers with a history of professional misconduct.",
+    option4: "",
   },
   question8: {
     title:
-      "Should the city cut services as one way to address loss of federal funds and dwindling downtown tax base?",
-    subject: "Federal Funding",
-    tellMeMore:
-      "Mayor Jacob Frey has stated that with all the federal cuts and dwindling downtown tax base, the city would need to raise property taxes by 13% to maintain current spending levels.",
-    option1: "Yes",
-    option2: "No",
-    option3: "",
+      "In 2025, the county attorney’s office largely stopped charging felony cases that originate from evidence collected during low-level traffic stops. Would you continue that or not, and why?",
+    subject: "Local policing",
+    tellMeMore: "",
+    option1:
+      "Continue the policy because it has been successful in reducing racial disparities in pretextual traffic stops.",
+    option2:
+      "Discontinue that policy and return to charging felony cases using evidence collected during traffic stops because it has not been successful.",
+    option3: "Continue the policy but change it in some ways.",
     option4: "",
   },
   question9: {
     title:
-      "Do you support the 7.8% property tax increase proposal in Mayor Jacob Frey’s proposed 2026 budget?",
-    subject: "Development",
-    tellMeMore:
-      "Mayor Jacob Frey is proposing the tax increase to secure funding for his proposed $2 billion budget, which largely keeps the city’s current services intact and eliminates some vacant city positions and some public events. The tax increase, which would amount to $240 more per year for a homeowner of a home valued at $333,000, also comes as the city’s downtown tax base has dropped following the COVID pandemic.",
-    option1: "Yes",
-    option2: "No",
-    option3: "Don’t know",
+      "In 2023, Gov. Tim Walz ordered Minnesota Attorney General Keith Ellison to take over a murder case from the Hennepin County attorney after two teenagers accused of murder were offered plea deals, sparking community outrage. What do you make of the governor’s intervention, and when should the governor step in?",
+    subject: "Intergovernmental relations",
+    tellMeMore: "",
+    option1:
+      "The governor was right to intervene in this case and has every right to exercise that authority when he sees fit.",
+    option2:
+      "The governor should not have interfered with the case and should leave local cases to the local officials elected to prosecute them.",
+    option3:
+      "The governor has every right to intervene, but should not have taken this specific case from the Hennepin County Attorney’s Office without a request for assistance from the office.",
     option4: "",
   },
   question10: {
-    title: "Do you support a new arena for the Timberwolves?",
-    subject: "Development",
-    tellMeMore:
-      "The new owners of the Minnesota Timberwolves have signaled that they want a new arena to replace Target Center, which is 35 years old and lacks the amenities of a modern NBA arena. The owners have signaled an interest in funding it privately, which also happened in St. Paul with Allianz Field, although it is exempt from property taxes.",
-    option1: "Yes, privately funded.",
+    title:
+      "What would you have done differently in that case? (This is in reference to the question above involving Gov. Walz.)",
+    subject: "Intergovernmental relations",
+    tellMeMore: "",
+    option1: "Nothing",
     option2:
-      "Yes, privately funded and without incentives like property tax exemptions.",
-    option3: "Yes, publicly funded.",
-    option4: "No",
+      "Prosecute the two teenagers as adults and seek prison sentences in the first place.",
+    option3:
+      "Seek plea deals for the two teenagers, but change course following community outrage and before the governor’s intervention.",
+    option4: "",
   },
   question11: {
-    title: "Should the city build a pedestrian mall at George Floyd Square?",
-    subject: "Development",
-    tellMeMore:
-      "Activists have held a memorial at the intersection where George Floyd was murdered since the summer of 2020. The city’s most recent proposal for a permanent memorial is to add a pedestrian mall and cul de sac, effectively cutting off the intersection.",
-    option1: "Yes",
-    option2: "No",
-    option3: "Don’t know",
+    title:
+      "The county attorney’s office and Minnesota Attorney General appear to be working together more than ever before. How do you see the future of that partnership, and when should the two offices join forces?",
+    subject: "Intergovernmental relations",
+    tellMeMore: "",
+    option1:
+      "Continue working with the state’s top prosecutor as often as possible because partnerships between the Hennepin County attorney and Minnesota attorney general have been necessary and fruitful.",
+    option2:
+      "Focus more of the office’s efforts on local matters because the Hennepin County attorney should not to work as closely with the state’s attorney general.",
+    option3:
+      "Limit cooperation to specific instances like suing the federal government, because the Hennepin County attorney and the state’s attorney general should have a good working relationship.",
     option4: "",
   },
 };

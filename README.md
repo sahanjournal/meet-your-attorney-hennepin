@@ -78,7 +78,7 @@ You may also see any lint errors in the console.
 
 Runs the `downloadGoogleDocContent` function inside `src/scripts.js`. This function uses [ArchieML](http://archieml.org/) to download content from a Google Doc and save it in a JavaScript object variable in `[FILENAME]-content.js` in the `src` directory.
 
-This current iteration of the project downloads from four different google docs via the four options: `FILENAME = candidate` and `FILENAME = questions` for candidate and quiz question data. However, you can edit the `downloadGoogleDocContent` function inside `src/scripts.js` to work with whatever set of documents makes sense for your project. Using this integration is totally optional — feel free to edit the content in any of these files directly, which start with `candidate-` or `question-`.
+This current iteration of the project downloads from four different google docs via the four options: `FILENAME = candidate` and `FILENAME = question` for candidate and quiz question data. However, you can edit the `downloadGoogleDocContent` function inside `src/scripts.js` to work with whatever set of documents makes sense for your project. Using this integration is totally optional — feel free to edit the content in any of these files directly, which start with `candidate-` or `question-`.
 
 NOTE: before running this command, you must globally install the AML Google Doc Server on your computer by running:
 
