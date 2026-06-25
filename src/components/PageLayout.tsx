@@ -98,9 +98,9 @@ const Footer = () => {
             </span>
           ))}
           . Illustrations by Andrés Guzmán. Photos provided by candidates’
-          campaigns. Meet Your Attorney concept from{" "}
+          campaigns. Meet Your Attorney concept:{" "}
           <OutboundLink to="https://www.thecity.nyc/">THE CITY</OutboundLink>.{" "}
-          Original design by{" "}
+          Original design:{" "}
           <OutboundLink to="https://samrabiyah.com">Sam Rabiyah</OutboundLink>{" "}
           and{" "}
           <OutboundLink to="https://www.thecity.nyc/">THE CITY</OutboundLink>.
