@@ -51,7 +51,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
     website,
     age,
     occupation,
-    neighborhood,
+    city,
     party,
     quote1,
     quote2,
@@ -165,10 +165,10 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
             </div>
           )}
 
-          {!!neighborhood && (
+          {!!city && (
             <div className="eyebrow has-text-left mb-0">
-              <span className="has-text-weight-semibold">Neighborhood: </span>
-              {neighborhood}
+              <span className="has-text-weight-semibold">City: </span>
+              {city}
             </div>
           )}
         </div>
