@@ -33,18 +33,7 @@ const Homepage = () => {
   );
 
   return (
-    <PageLayout
-      isHomepage
-      customMetadata={{
-        slug: `${process.env.GATSBY_SLUG}`,
-        shareImageFilename: "social-image.jpg",
-        siteName: `Meet Your Attorney 2026`,
-        seoHeadline: `Meet Your Attorney: Take this quiz`,
-        socialHeadline: `Take the Quiz: Meet Your Attorney`,
-        socialDescription: `Candidates for Hennepin County Attorney told us where they stand on issues. Which is the top match for you? Find out before heading to the polls.`,
-        seoDescription: `Candidates for Hennepin County Attorney told us where they stand on big issues. Which is the top match for you? Take our quiz to find out before you head to the polls.`,
-      }}
-    >
+    <PageLayout isHomepage>
       <div className="hero is-fullheight has-color-background has-dotted-background pt-6">
         <IntroAnimation isMobile />
         <div className="hero-body pt-6">
