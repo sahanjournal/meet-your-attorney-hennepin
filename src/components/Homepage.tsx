@@ -61,7 +61,8 @@ const Homepage = () => {
                   Updated: {getDateUpdated()}
                 </p>
                 <p className="deck has-text-left" style={{ maxWidth: "600px" }}>
-                  Who should you vote for in the primary election to be the next Hennepin County attorney? Take the same quiz the candidates
+                  Who should you vote for in the primary election to be the next
+                  Hennepin County attorney? Take the same quiz the candidates
                   did and find your closest match.
                 </p>
                 <div className="is-flex is-flex-direction-column mt-5 mb-6">
