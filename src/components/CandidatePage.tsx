@@ -66,13 +66,9 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
   return (
     <PageLayout
       customMetadata={{
-        slug: `${process.env.GATSBY_SLUG}`,
-        shareImageFilename: "social-image.jpg",
         siteName: `${candidateName} | Meet Your Hennepin County Attorney`,
         seoHeadline: `${candidateName}: Meet Your Hennepin County Attorney`,
         socialHeadline: `${candidateName}: Meet Your Hennepin County Attorney`,
-        socialDescription: `Candidates for Hennein County Attorney told us where they stand on issues. Which is the top match for you? Find out before the August 11 primary election.`,
-        seoDescription: `Which candidate for Hennepin County Attorney is a top match for you? Take our quiz to find out before the August 11 primary election.`,
       }}
     >
       <div className="container pt-6" style={{ maxWidth: "1100px" }}>
