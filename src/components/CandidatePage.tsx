@@ -214,7 +214,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
         </div>
       </div> */}
       <div className="container pt-5 mb-5" style={{ maxWidth: "600px" }}>
-        <h1 className="headline has-text-left mt-6">Election Coverage</h1>
+        <h1 className="headline has-text-left mt-6">Recent News</h1>
         <RecentCoverage />
         <div className="mt-6">
           <NewsletterSignupBanner />
