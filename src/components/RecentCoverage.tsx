@@ -2,8 +2,7 @@ import React from "react";
 import { OutboundLink } from "./Links";
 import { track } from "@amplitude/analytics-browser";
 
-const LINKS_JSON_URL_PREFIX =
-  "https://sahanjournal.com/wp-json/wp/v2/posts?categories=15";
+const LINKS_JSON_URL_PREFIX = "https://sahanjournal.com/wp-json/wp/v2/posts";
 
 const DONATION_URL = "https://sahanjournal.fundjournalism.org/";
 
