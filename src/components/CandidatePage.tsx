@@ -48,6 +48,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
 
   const {
     website,
+    bio,
     age,
     occupation,
     city,
@@ -165,6 +166,8 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
             </div>
           )}
         </div>
+
+        <div className="copy my-5">{formatContent(bio)}</div>
 
         {[quote1, quote2, quote3, quote4, quote5].map((quote, i) => (
           <div className="copy my-2 py-2" key={i}>
