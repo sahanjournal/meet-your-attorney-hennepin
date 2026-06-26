@@ -10,7 +10,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { NewsletterSignupBanner } from "./NewsletterSignup";
 import { useAppStore } from "../useAppStore";
 import { getQuestionsLeftToAnswer } from "./Results";
-import { Link, withPrefix } from "gatsby";
+import { Link } from "gatsby";
 
 const OPEN_ENDED_QUESTIONS = [
   "Why are you running for Hennepin County attorney?",
@@ -59,7 +59,9 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
     quote5,
   } = candidateInfo;
 
-  const imgPath = withPrefix(`photos/${kebabCase(candidateName)}-photo.jpg`);
+  const imgPath = `${process.env.GATSBY_DOMAIN}${
+    process.env.GATSBY_SLUG
+  }/photos/${kebabCase(candidateName)}-photo.jpg`;
 
   return (
     <PageLayout
