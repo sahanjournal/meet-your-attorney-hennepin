@@ -48,6 +48,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
 
   const {
     website,
+    bio,
     age,
     occupation,
     city,
@@ -65,8 +66,7 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
       customMetadata={{
         slug: `${process.env.GATSBY_SLUG}`,
         shareImageFilename: "social-image.jpg",
-        siteName: `${candidateName} | "Meet Your Hennepin County Attorney",
-        }`,
+        siteName: `${candidateName} | Meet Your Hennepin County Attorney`,
         seoHeadline: `${candidateName}: Meet Your Hennepin County Attorney`,
         socialHeadline: `${candidateName}: Meet Your Hennepin County Attorney`,
         socialDescription: `Candidates for Hennein County Attorney told us where they stand on issues. Which is the top match for you? Find out before the August 11 primary election.`,
@@ -166,12 +166,14 @@ const CandidatePage: React.FC<{ pageContext: any }> = ({ pageContext }) => {
           )}
         </div>
 
+        <div className="copy my-5">{formatContent(bio)}</div>
+
         {[quote1, quote2, quote3, quote4, quote5].map((quote, i) => (
           <div className="copy my-2 py-2" key={i}>
             <h3 className="deck has-text-left mb-4 has-text-weight-semibold">
               {OPEN_ENDED_QUESTIONS[i]}
             </h3>
-            {formatContent(quote, true)}
+            {formatContent(quote)}
           </div>
         ))}
       </div>
