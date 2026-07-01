@@ -335,11 +335,23 @@ const Results: React.FC = () => {
             </div>
 
             <div className="voter-reg-banner p-5">
-              <div className="is-hidden-mobile deck has-text-weight-semibold has-text-left mt-0 mb-3">
-                Register to vote before heading to the polls!
+              <div className="is-hidden-mobile deck has-text-weight-semibold has-text-left mt-0 mb-2">
+                Ready to hit the polls?
               </div>
-              <div className="is-hidden-tablet eyebrow mt-0 mb-4">
-                Register to vote before heading to the polls!
+              <div className="is-hidden-mobile eyebrow mb-4">
+                Online registration is currently open.
+                {/* Switch to the line below on July 21 */}
+                {/* The window for online registration has ended — but you can still
+                vote in the primary. It's easy! */}
+              </div>
+              <div className="is-hidden-tablet eyebrow mt-0 mb-3">
+                Ready to hit the polls?
+              </div>
+              <div className="is-hidden-tablet eyebrow mt-0 mb-3">
+                Online registration is currently open.
+                {/* Switch to the line below on July 21 */}
+                {/* The window for online registration has ended — but you can still
+                vote in the primary. It's easy! */}
               </div>
               <div className="field is-grouped mb-5">
                 <OutboundLink to="https://www.sos.mn.gov/elections-voting/register-to-vote/">
