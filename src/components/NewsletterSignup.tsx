@@ -114,6 +114,7 @@ export const NewsletterSignupBanner: React.FC<{
                   ) : (
                     <>Sign Up</>
                   )}
+                  {/* add amplitude tracking here: "Clicked Newsletter Signup" */}
                 </button>
               </div>
             </div>

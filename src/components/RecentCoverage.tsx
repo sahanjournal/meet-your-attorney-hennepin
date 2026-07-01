@@ -37,7 +37,7 @@ const testValidSetOfLinks = (links: any[]) => {
     }
   });
 };
-
+// add amplitude tracking here: "Clicked recent coverage link"
 export const RecentCoverage: React.FC = () => {
   const [links, setLinks] = React.useState(DEFAULT_LINKS);
 
@@ -81,6 +81,7 @@ export const RecentCoverage: React.FC = () => {
               to={link.href}
               className="copy has-text-left ml-0"
               style={{ lineHeight: "1.4rem" }}
+              // add amplitude tracking here: "Clicked on Sahan's homepage"
             >
               {link.text}
             </OutboundLink>

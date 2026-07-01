@@ -58,6 +58,7 @@ export const SocialShareButtons: React.FC<{
           results,
         )}&url=${shareUrl}`}
         ariaLabel="Share on X"
+        // add amplitude tracking here: "Clicked Share on X"
       />
       <SocialButton
         url={`https://bsky.app/intent/compose?text=${getShareText(
@@ -65,6 +66,7 @@ export const SocialShareButtons: React.FC<{
           results,
         )} ${shareUrl}`}
         ariaLabel="Share on Bluesky"
+        // add amplitude tracking here: "Clicked Share on Bluesky"
       />
       <SocialButton
         url={`mailto:?subject=Meet Your Attorney: 2026&body=${getShareText(
@@ -72,6 +74,7 @@ export const SocialShareButtons: React.FC<{
           results,
         )} ${shareUrl}`}
         ariaLabel="Share via Email"
+        // add amplitude tracking here: "Clicked Share via Email"
       />
     </>
   );
