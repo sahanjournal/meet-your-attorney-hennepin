@@ -341,7 +341,7 @@ const Results: React.FC = () => {
                 Ready to hit the polls?
               </div>
               <div className="is-hidden-mobile eyebrow mb-4">
-                {todaysDate < new Date("2026-07-21") ? (
+                {todaysDate < new Date("2026-07-22") ? (
                   <span>Online registration is currently open.</span>
                 ) : (
                   <span>
@@ -354,7 +354,7 @@ const Results: React.FC = () => {
                 Ready to hit the polls?
               </div>
               <div className="is-hidden-tablet eyebrow mt-0 mb-3">
-                {todaysDate < new Date("2026-07-21") ? (
+                {todaysDate < new Date("2026-07-22") ? (
                   <span>Online registration is currently open.</span>
                 ) : (
                   <span>
