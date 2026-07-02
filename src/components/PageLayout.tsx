@@ -19,7 +19,7 @@ const SAHAN_SITE_LINKS = {
   x: "https://x.com/sahanjournal",
   instagram: "https://www.instagram.com/sahanjournal/",
   facebook: "https://www.facebook.com/sahanjournal/",
-  bluesky: "https://bsky.app/profile/did:plc:ukvib7xzyn5cjdapkhntmmue",
+  bluesky: "https://bsky.app/profile/sahanjournal.bsky.social",
 };
 
 const byline = process.env.GATSBY_AUTHOR
