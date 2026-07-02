@@ -75,20 +75,17 @@ export const RecentCoverage: React.FC = () => {
       <div className="eyebrow mb-2 mt-3">SAHAN JOURNAL</div>
       <ul>
         {links.map((link, i) => (
-          <li
-            key={i}
-            className="label is-flex mb-0"
-            onClick={() => {
-              track(`Clicked recent coverage link`, {
-                articleTitle: link.text,
-              });
-            }}
-          >
+          <li key={i} className="label is-flex mb-0">
             <div className="mr-2 mt-1">●</div>{" "}
             <OutboundLink
               to={link.href}
               className="copy has-text-left ml-0"
               style={{ lineHeight: "1.4rem" }}
+              onClick={() => {
+                track(`Clicked recent coverage link`, {
+                  articleTitle: link.text,
+                });
+              }}
             >
               {link.text}
             </OutboundLink>
