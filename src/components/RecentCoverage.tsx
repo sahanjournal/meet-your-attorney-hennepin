@@ -4,7 +4,8 @@ import { track } from "@amplitude/analytics-browser";
 
 const LINKS_JSON_URL_PREFIX = "https://sahanjournal.com/wp-json/wp/v2/posts";
 
-const DONATION_URL = "https://sahanjournal.fundjournalism.org/";
+const DONATION_URL =
+  "https://sahanjournal.fundjournalism.org/donate?&org_id=sahanjournal&campaign=701PM000019VvXOYA0";
 
 const DEFAULT_LINKS = [
   {
