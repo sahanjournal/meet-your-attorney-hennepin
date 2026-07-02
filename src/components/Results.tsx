@@ -182,6 +182,8 @@ const Results: React.FC = () => {
     }
   });
 
+  const todaysDate = new Date();
+
   return (
     <>
       {showTopicsSelector && (
@@ -339,19 +341,27 @@ const Results: React.FC = () => {
                 Ready to hit the polls?
               </div>
               <div className="is-hidden-mobile eyebrow mb-4">
-                Online registration is currently open.
-                {/* Switch to the line below on July 21 */}
-                {/* The window for online registration has ended — but you can still
-                vote in the primary. It's easy! */}
+                {todaysDate < new Date("2026-07-21") ? (
+                  <span>Online registration is currently open.</span>
+                ) : (
+                  <span>
+                    The window for online registration has ended — but you can
+                    still vote in the primary. It's easy!
+                  </span>
+                )}
               </div>
               <div className="is-hidden-tablet eyebrow mt-0 mb-3">
                 Ready to hit the polls?
               </div>
               <div className="is-hidden-tablet eyebrow mt-0 mb-3">
-                Online registration is currently open.
-                {/* Switch to the line below on July 21 */}
-                {/* The window for online registration has ended — but you can still
-                vote in the primary. It's easy! */}
+                {todaysDate < new Date("2026-07-21") ? (
+                  <span>Online registration is currently open.</span>
+                ) : (
+                  <span>
+                    The window for online registration has ended — but you can
+                    still vote in the primary. It's easy!
+                  </span>
+                )}
               </div>
               <div className="field is-grouped mb-5">
                 <OutboundLink to="https://www.sos.mn.gov/elections-voting/register-to-vote/">
