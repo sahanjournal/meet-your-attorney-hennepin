@@ -377,7 +377,7 @@ const Results: React.FC = () => {
                     <span className="is-hidden-tablet">Check registration</span>
                   </button>
                 </OutboundLink>
-                <OutboundLink to="https://www.hennepincounty.gov/-/media/Hennepin-Headless/Hennepin-Gov/services/elections/voter-guide.pdf">
+                <OutboundLink to="https://sahanjournal.com/news/minnesota-primary-election-2026-how-to-vote/">
                   <button
                     className="button is-link is-white"
                     onClick={() => {
