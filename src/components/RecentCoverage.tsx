@@ -81,6 +81,11 @@ export const RecentCoverage: React.FC = () => {
               to={link.href}
               className="copy has-text-left ml-0"
               style={{ lineHeight: "1.4rem" }}
+              onClick={() => {
+                track(`Clicked recent coverage link`, {
+                  articleTitle: link.text,
+                });
+              }}
             >
               {link.text}
             </OutboundLink>

@@ -6,10 +6,11 @@ export const questionContent = {
     tellMeMore:
       "Hennepin County Attorney Mary Moriarty charged ICE agent Gregory Morgan Jr. with two counts of second-degree assault for allegedly pointing his gun at two people in traffic during Operation Metro Surge. She also charged ICE agent Christian Castro with four counts of second-degree assault and one count of falsely reporting a crime for allegedly shooting and wounding an immigrant in north Minneapolis. Castro also allegedly said he was assaulted before he shot the man.",
     option1:
-      "Yes, I will continue to prosecute the federal agents already charged.",
-    option2: "No, I will drop the charges against the federal agent.",
+      "Yes, the county attorney should continue to prosecute the federal agents already charged.",
+    option2:
+      "No, the county attorney should drop the charges against the federal agent.",
     option3:
-      "I will evaluate the evidence and make my decision only after I am elected.",
+      "The county attorney should evaluate the evidence and make my decision only after I am elected.",
     option4: "",
   },
   question2: {
@@ -18,11 +19,12 @@ export const questionContent = {
     subject: "Metro Surge",
     tellMeMore:
       "Hennepin County Attorney Mary Moriarty and Minnesota Attorney General Keith Ellison jointly launched independent investigations into the fatal shootings of Rene Good and Alex Pretti after the federal government refused to share evidence with local authorities. They created an online portal for the public to share information, videos and photos related to the January killings. Moriarty is also suing the U.S. Departments of Justice and Homeland Security to compel the agencies to release evidence in the shootings.",
-    option1: "Yes, I will actively continue both investigations.",
+    option1:
+      "Yes, the county attorney should actively continue both investigations.",
     option2:
-      "No, I will defer to federal officials and focus the office’s efforts elsewhere.",
+      "No, the county attorney should defer to federal officials and focus the office’s efforts elsewhere.",
     option3:
-      "I will not take a lead role in the investigations but wait for the BCA to finish their investigation.",
+      "The county attorney should not take a lead role in the investigations but wait for the BCA to finish their investigation.",
     option4: "",
   },
   question3: {
@@ -72,7 +74,7 @@ export const questionContent = {
       "What’s the best philosophy regarding prison time for juveniles convicted of violent crimes? What risk should the general public shoulder in that equation?",
     subject: "Youth prosecution",
     tellMeMore:
-      "Juvenile justice reform was a major part of county attorney Mary Moriarty’s campaign for the post in 2022. She vowed to end adult prison sentences for youth offenders. Her philosophy was put to the test in 2023 when she offered plea deals to two teenagers accused of a fatal shooting, sparking community outrage and the governor’s intervention.",
+      "Juvenile justice reform was a major part of Hennepin County Attorney Mary Moriarty’s campaign for the post in 2022. She vowed to end adult prison sentences for youth offenders. Her philosophy was put to the test in 2023 when she offered plea deals to two teenagers accused of a fatal shooting, sparking community outrage and the governor’s intervention.",
     option1:
       "Emphasize rehabilitation instead of prison time in as many cases as possible.",
     option2:

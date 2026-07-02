@@ -9,12 +9,14 @@ export const OutboundLink: React.FC<{
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
-}> = ({ to, children, className, style }) => {
+  onClick?: () => void;
+}> = ({ to, children, className, style, onClick }) => {
   const isSahanLink = to.includes("sahanjournal.com");
   return (
     <a
       className={className}
       style={style}
+      onClick={onClick}
       href={to + (isSahanLink ? DEFAULT_SAHAN_UTM_PARAMS : "")}
       target="_blank"
       rel="noopener noreferrer"
