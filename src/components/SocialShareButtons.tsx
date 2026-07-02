@@ -1,3 +1,4 @@
+import { track } from "@amplitude/analytics-browser";
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 
@@ -10,10 +11,11 @@ type ScoreShareDetails = {
   matchScore: number;
 };
 
-export const SocialButton: React.FC<{ url: string; ariaLabel?: string }> = ({
-  url,
-  ariaLabel,
-}) => (
+export const SocialButton: React.FC<{
+  url: string;
+  ariaLabel?: string;
+  onClick?: () => void;
+}> = ({ url, ariaLabel, onClick }) => (
   <SocialIcon
     className="button is-icon mr-2 p-0"
     target="_blank"
@@ -58,7 +60,9 @@ export const SocialShareButtons: React.FC<{
           results,
         )}&url=${shareUrl}`}
         ariaLabel="Share on X"
-        // add amplitude tracking here: "Clicked Share on X"
+        onClick={() => {
+          track("Clicked Share on X");
+        }}
       />
       <SocialButton
         url={`https://bsky.app/intent/compose?text=${getShareText(
@@ -66,7 +70,9 @@ export const SocialShareButtons: React.FC<{
           results,
         )} ${shareUrl}`}
         ariaLabel="Share on Bluesky"
-        // add amplitude tracking here: "Clicked Share on Bluesky"
+        onClick={() => {
+          track("Clicked Share on Bluesky");
+        }}
       />
       <SocialButton
         url={`mailto:?subject=Meet Your Attorney: 2026&body=${getShareText(
@@ -74,7 +80,9 @@ export const SocialShareButtons: React.FC<{
           results,
         )} ${shareUrl}`}
         ariaLabel="Share via Email"
-        // add amplitude tracking here: "Clicked Share via Email"
+        onClick={() => {
+          track("Clicked Share via Email");
+        }}
       />
     </>
   );

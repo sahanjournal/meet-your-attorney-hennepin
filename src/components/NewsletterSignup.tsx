@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import { OutboundLink } from "./Links";
 import classnames from "classnames";
+import { track } from "@amplitude/analytics-browser";
 
 const SAHAN_FALLBACK_NEWSLETTER_LINK = "https://sahanjournal.com/newsletter/";
 
@@ -103,6 +104,9 @@ export const NewsletterSignupBanner: React.FC<{
                   className="button is-small is-white mt-1"
                   type="submit"
                   disabled={status === "loading"}
+                  onClick={() => {
+                    track("Clicked Newsletter Signup");
+                  }}
                 >
                   {status === "loading" ? (
                     <>
@@ -114,7 +118,6 @@ export const NewsletterSignupBanner: React.FC<{
                   ) : (
                     <>Sign Up</>
                   )}
-                  {/* add amplitude tracking here: "Clicked Newsletter Signup" */}
                 </button>
               </div>
             </div>
