@@ -1,1 +1,152 @@
-export const questionContent = {"question1":{"title":"Should the new county attorney continue the office’s prosecutions of federal agents who are already charged?","subject":"Metro Surge","tellMeMore":"Hennepin County Attorney Mary Moriarty charged ICE agent Gregory Morgan Jr. with two counts of second-degree assault for allegedly pointing his gun at two people in traffic during Operation Metro Surge. She also charged ICE agent Christian Castro with four counts of second-degree assault and one count of falsely reporting a crime for allegedly shooting and wounding an immigrant in north Minneapolis. Castro also allegedly said he was assaulted before he shot the man.","option1":"Yes, the county attorney should continue to prosecute the federal agents already charged.","option2":"No, the county attorney should drop the charges against the federal agent.","option3":"The county attorney should evaluate the evidence and make my decision only after I am elected.","option4":""},"question2":{"title":"Should the next county attorney continue investigating the killings of Renee Good and Alex Pretti?","subject":"Metro Surge","tellMeMore":"Hennepin County Attorney Mary Moriarty and Minnesota Attorney General Keith Ellison jointly launched independent investigations into the fatal shootings of Rene Good and Alex Pretti after the federal government refused to share evidence with local authorities. They created an online portal for the public to share information, videos and photos related to the January killings. Moriarty is also suing the U.S. Departments of Justice and Homeland Security to compel the agencies to release evidence in the shootings.","option1":"Yes, the county attorney should actively continue both investigations.","option2":"No, the county attorney should defer to federal officials and focus the office’s efforts elsewhere.","option3":"The county attorney should not take a lead role in the investigations but wait for the BCA to finish their investigation.","option4":""},"question3":{"title":"What is the Hennepin County Attorney Office’s role in holding federal officials accountable for their conduct during Operation Metro Surge?","subject":"Metro Surge","tellMeMore":"Hennepin County Attorney Mary Moriarty has said she’ll continue to gather information about any potential wrongdoing by federal immigration agents during Operation Metro Surge, and will seek charges when possible.","option1":"The office is responsible for prosecuting unlawful conduct in its jurisdiction, regardless of whether the alleged offender is a federal law enforcement officer.","option2":"The office is not at all responsible for the conduct of federal law enforcement officers, who should be held accountable by their agency or federal prosecutors.","option3":"The office is not solely responsible for the conduct of federal law enforcement officers in its jurisdiction, but should assist federal prosecutors in holding them accountable.","option4":""},"question4":{"title":"Does the county attorney’s office have a responsibility to investigate local law enforcement’s conduct during crowd control at several federal enforcement scenes?","subject":"Metro Surge","tellMeMore":"Local police and sheriff’s deputies have been criticized by community members for how they treated the public while providing crowd control at several federal enforcement scenes, including immigration raids. Local authorities have said they were providing necessary crowd control to keep the public safe, and were not aiding in federal activity. However, some critics viewed their work as complicit in federal enforcement, and said they used too much force on demonstrators.","option1":"Yes, the Hennepin County attorney has an obligation to gather evidence and victim accounts regarding the conduct of local law enforcement officers in its jurisdiction, and to bring charges when possible.","option2":"No, local law enforcement agencies are responsible for holding their own officers accountable in those instances and should issue discipline internally if needed.","option3":"The Hennepin County attorney has some discretion in investigating the conduct of local law enforcement offices, but officer conduct during Operation Metro Surge did not meet that threshold.","option4":""},"question5":{"title":"How should the county attorney balance holding juveniles accountable for criminal activity while providing room for meaningful rehabilitation?","subject":"Youth prosecution","tellMeMore":"Hennepin County Attorney Mary Moriarty has put an emphasis on rehabilitating juvenile offenders via alternatives to the traditional court system, and has expanded the office’s diversion program. Youth accused of serious felonies like murder, however, don’t qualify for such programs.","option1":"Continue to put an emphasis on rehabilitation outside of prison for most juvenile offenders, including repeat offenders.","option2":"Largely maintain the current emphasis on rehabilitation over prison time, but use slightly more strict enforcement with some cases, including violent crimes and repeat offenses.","option3":"Begin seeking longer sentences and prison time for more juvenile offenders as a way to reduce repeat offenders.","option4":""},"question6":{"title":"What’s the best philosophy regarding prison time for juveniles convicted of violent crimes? What risk should the general public shoulder in that equation?","subject":"Youth prosecution","tellMeMore":"Juvenile justice reform was a major part of Hennepin County Attorney Mary Moriarty’s campaign for the post in 2022. She vowed to end adult prison sentences for youth offenders. Her philosophy was put to the test in 2023 when she offered plea deals to two teenagers accused of a fatal shooting, sparking community outrage and the governor’s intervention.","option1":"Emphasize rehabilitation instead of prison time in as many cases as possible.","option2":"Convictions for violent crimes should always result in prison sentences regardless of age.","option3":"Take a case-by-case approach.","option4":""},"question7":{"title":"What level of collaboration do you envision between the Hennepin County Attorney’s Office and local law enforcement agencies in the county?","subject":"Local policing","tellMeMore":"Hennepin County Attorney Mary Moriarty has received criticism for what some say are strained relationships with local police departments. Both Hennepin County Sheriff Dawanna Witt and former Minneapolis Police Chief Brian O’Hara have spoken publicly about a lack of feedback and collaboration with the county attorney’s office. Moriarty levied the same accusations against O’Hara.","option1":"A symbiotic relationship that involves the alignment of policies and mindset relating to which cases should be charged and what crimes should be prioritized.","option2":"A relationship that only involves steps necessary for charging crimes like the sharing of evidence.","option3":"The county attorney’s office works with local agencies to build cases for prosecution, but should also serve as a checks-and-balances system to ensure that officers are not abusing their authority while investigating cases, and should not take cases from officers with a history of professional misconduct.","option4":""},"question8":{"title":"Would you continue the county attorney’s policy not to charge felony cases that originate from traffic stops? Why or why not?","subject":"Local policing","tellMeMore":"Hennepin County Attorney Mary Moriarty decided in 2025 to largely stop charging felony cases that originate from evidence collected during low-level traffic stops. Moriarty said the risk of enforcing minor traffic violations outweighed the reward, citing disproportionate harm to residents of color and data that shows low levels of success during these stops.","option1":"Continue the policy because it has been successful in reducing racial disparities in pretextual traffic stops.","option2":"Discontinue that policy and return to charging felony cases using evidence collected during traffic stops because it has not been successful.","option3":"Continue the policy but change it in some ways.","option4":""},"question9":{"title":"What do you make of the governor’s intervention during a 2023 murder case involving two teenagers, and when should the governor step in?","subject":"Government relations","tellMeMore":"Gov. Tim Walz ordered Minnesota Attorney General Keith Ellison to take over a murder case from Hennepin County Attorney Mary Moriarity after her office offered plea deals to two teenage brothers accused in a fatal shooting, sparking community outrage. The juveniles were accused of killing 23-year-old Zaria McKeever; her ex-boyfriend sent them to her apartment to kill her current partner. After Ellison’s office took over the case, the brother who shot and killed McKeever was sentenced to more than 10 years in prison. The other brother, who was present during the murder, was sentenced to two years in a juvenile correction facility.","option1":"The governor was right to intervene in this case and has every right to exercise that authority when he sees fit.","option2":"The governor should not have interfered with the case and should leave local cases to the local officials elected to prosecute them.","option3":"The governor has every right to intervene, but should not have taken this specific case from the Hennepin County Attorney’s Office without a request for assistance from the office.","option4":""},"question10":{"title":"What should the county attorney have done differently in the 2023 murder case?","subject":"Government relations","tellMeMore":"","option1":"Nothing","option2":"Prosecute the two teenagers as adults and seek prison sentences in the first place.","option3":"Seek plea deals for the two teenagers, but change course following community outrage and before the governor’s intervention.","option4":""},"question11":{"title":"How do you see the future of the partnership between the county attorney’s office and state attorney general, and when should the two offices join forces?","subject":"Government relations","tellMeMore":"The Hennepin County Attorney’s office and Minnesota Attorney General appear to be working together more than ever before, including filing multiple lawsuits against the federal government during and after Operation Metro Surge.","option1":"Continue working with the state’s top prosecutor as often as possible because partnerships between the Hennepin County attorney and Minnesota attorney general have been necessary and fruitful.","option2":"Focus more of the office’s efforts on local matters because the Hennepin County attorney should not work as closely with the state’s attorney general.","option3":"Limit cooperation to specific instances like suing the federal government, because the Hennepin County attorney and the state’s attorney general should have a good working relationship.","option4":""}}
+export const questionContent = {
+  question1: {
+    title:
+      "Should the new county attorney continue the office’s prosecutions of federal agents who are already charged?",
+    subject: "Metro Surge",
+    tellMeMore:
+      "Hennepin County Attorney Mary Moriarty charged ICE agent Gregory Morgan Jr. with two counts of second-degree assault for allegedly pointing his gun at two people in traffic during Operation Metro Surge. She also charged ICE agent Christian Castro with four counts of second-degree assault and one count of falsely reporting a crime for allegedly shooting and wounding an immigrant in north Minneapolis. Castro also allegedly said he was assaulted before he shot the man.",
+    option1:
+      "Yes, the county attorney should continue to prosecute the federal agents already charged.",
+    option2:
+      "No, the county attorney should drop the charges against the federal agent.",
+    option3:
+      "The county attorney should evaluate the evidence and make my decision only after I am elected.",
+    option4: "",
+  },
+  question2: {
+    title:
+      "Should the next county attorney continue investigating the killings of Renee Good and Alex Pretti?",
+    subject: "Metro Surge",
+    tellMeMore:
+      "Hennepin County Attorney Mary Moriarty and Minnesota Attorney General Keith Ellison jointly launched independent investigations into the fatal shootings of Rene Good and Alex Pretti after the federal government refused to share evidence with local authorities. They created an online portal for the public to share information, videos and photos related to the January killings. Moriarty is also suing the U.S. Departments of Justice and Homeland Security to compel the agencies to release evidence in the shootings.",
+    option1:
+      "Yes, the county attorney should actively continue both investigations.",
+    option2:
+      "No, the county attorney should defer to federal officials and focus the office’s efforts elsewhere.",
+    option3:
+      "The county attorney should not take a lead role in the investigations but wait for the BCA to finish their investigation.",
+    option4: "",
+  },
+  question3: {
+    title:
+      "What is the Hennepin County Attorney Office’s role in holding federal officials accountable for their conduct during Operation Metro Surge?",
+    subject: "Metro Surge",
+    tellMeMore:
+      "Hennepin County Attorney Mary Moriarty has said she’ll continue to gather information about any potential wrongdoing by federal immigration agents during Operation Metro Surge, and will seek charges when possible.",
+    option1:
+      "The office is responsible for prosecuting unlawful conduct in its jurisdiction, regardless of whether the alleged offender is a federal law enforcement officer.",
+    option2:
+      "The office is not at all responsible for the conduct of federal law enforcement officers, who should be held accountable by their agency or federal prosecutors.",
+    option3:
+      "The office is not solely responsible for the conduct of federal law enforcement officers in its jurisdiction, but should assist federal prosecutors in holding them accountable.",
+    option4: "",
+  },
+  question4: {
+    title:
+      "Does the county attorney’s office have a responsibility to investigate local law enforcement’s conduct during crowd control at several federal enforcement scenes?",
+    subject: "Metro Surge",
+    tellMeMore:
+      "Local police and sheriff’s deputies have been criticized by community members for how they treated the public while providing crowd control at several federal enforcement scenes, including immigration raids. Local authorities have said they were providing necessary crowd control to keep the public safe, and were not aiding in federal activity. However, some critics viewed their work as complicit in federal enforcement, and said they used too much force on demonstrators.",
+    option1:
+      "Yes, the Hennepin County attorney has an obligation to gather evidence and victim accounts regarding the conduct of local law enforcement officers in its jurisdiction, and to bring charges when possible.",
+    option2:
+      "No, local law enforcement agencies are responsible for holding their own officers accountable in those instances and should issue discipline internally if needed.",
+    option3:
+      "The Hennepin County attorney has some discretion in investigating the conduct of local law enforcement offices, but officer conduct during Operation Metro Surge did not meet that threshold.",
+    option4: "",
+  },
+  question5: {
+    title:
+      "How should the county attorney balance holding juveniles accountable for criminal activity while providing room for meaningful rehabilitation?",
+    subject: "Youth prosecution",
+    tellMeMore:
+      "Hennepin County Attorney Mary Moriarty has put an emphasis on rehabilitating juvenile offenders via alternatives to the traditional court system, and has expanded the office’s diversion program. Youth accused of serious felonies like murder, however, don’t qualify for such programs.",
+    option1:
+      "Continue to put an emphasis on rehabilitation outside of prison for most juvenile offenders, including repeat offenders.",
+    option2:
+      "Largely maintain the current emphasis on rehabilitation over prison time, but use slightly more strict enforcement with some cases, including violent crimes and repeat offenses.",
+    option3:
+      "Begin seeking longer sentences and prison time for more juvenile offenders as a way to reduce repeat offenders.",
+    option4: "",
+  },
+  question6: {
+    title:
+      "What’s the best philosophy regarding prison time for juveniles convicted of violent crimes? What risk should the general public shoulder in that equation?",
+    subject: "Youth prosecution",
+    tellMeMore:
+      "Juvenile justice reform was a major part of Hennepin County Attorney Mary Moriarty’s campaign for the post in 2022. She vowed to end adult prison sentences for youth offenders. Her philosophy was put to the test in 2023 when she offered plea deals to two teenagers accused of a fatal shooting, sparking community outrage and the governor’s intervention.",
+    option1:
+      "Emphasize rehabilitation instead of prison time in as many cases as possible.",
+    option2:
+      "Convictions for violent crimes should always result in prison sentences regardless of age.",
+    option3: "Take a case-by-case approach.",
+    option4: "",
+  },
+  question7: {
+    title:
+      "What level of collaboration do you envision between the Hennepin County Attorney’s Office and local law enforcement agencies in the county?",
+    subject: "Local policing",
+    tellMeMore:
+      "Hennepin County Attorney Mary Moriarty has received criticism for what some say are strained relationships with local police departments. Both Hennepin County Sheriff Dawanna Witt and former Minneapolis Police Chief Brian O’Hara have spoken publicly about a lack of feedback and collaboration with the county attorney’s office. Moriarty levied the same accusations against O’Hara.",
+    option1:
+      "A symbiotic relationship that involves the alignment of policies and mindset relating to which cases should be charged and what crimes should be prioritized.",
+    option2:
+      "A relationship that only involves steps necessary for charging crimes like the sharing of evidence.",
+    option3:
+      "The county attorney’s office works with local agencies to build cases for prosecution, but should also serve as a checks-and-balances system to ensure that officers are not abusing their authority while investigating cases, and should not take cases from officers with a history of professional misconduct.",
+    option4: "",
+  },
+  question8: {
+    title:
+      "Would you continue the county attorney’s policy not to charge felony cases that originate from traffic stops? Why or why not?",
+    subject: "Local policing",
+    tellMeMore:
+      "Hennepin County Attorney Mary Moriarty decided in 2025 to largely stop charging felony cases that originate from evidence collected during low-level traffic stops. Moriarty said the risk of enforcing minor traffic violations outweighed the reward, citing disproportionate harm to residents of color and data that shows low levels of success during these stops.",
+    option1:
+      "Continue the policy because it has been successful in reducing racial disparities in pretextual traffic stops.",
+    option2:
+      "Discontinue that policy and return to charging felony cases using evidence collected during traffic stops because it has not been successful.",
+    option3: "Continue the policy but change it in some ways.",
+    option4: "",
+  },
+  question9: {
+    title:
+      "What do you make of the governor’s intervention during a 2023 murder case involving two teenagers, and when should the governor step in?",
+    subject: "Government relations",
+    tellMeMore:
+      "Gov. Tim Walz ordered Minnesota Attorney General Keith Ellison to take over a murder case from Hennepin County Attorney Mary Moriarity after her office offered plea deals to two teenage brothers accused in a fatal shooting, sparking community outrage. The juveniles were accused of killing 23-year-old Zaria McKeever; her ex-boyfriend sent them to her apartment to kill her current partner. After Ellison’s office took over the case, the brother who shot and killed McKeever was sentenced to more than 10 years in prison. The other brother, who was present during the murder, was sentenced to two years in a juvenile correction facility.",
+    option1:
+      "The governor was right to intervene in this case and has every right to exercise that authority when he sees fit.",
+    option2:
+      "The governor should not have interfered with the case and should leave local cases to the local officials elected to prosecute them.",
+    option3:
+      "The governor has every right to intervene, but should not have taken this specific case from the Hennepin County Attorney’s Office without a request for assistance from the office.",
+    option4: "",
+  },
+  question10: {
+    title:
+      "What should the county attorney have done differently in the 2023 murder case?",
+    subject: "Government relations",
+    tellMeMore: "",
+    option1: "Nothing",
+    option2:
+      "Prosecute the two teenagers as adults and seek prison sentences in the first place.",
+    option3:
+      "Seek plea deals for the two teenagers, but change course following community outrage and before the governor’s intervention.",
+    option4: "",
+  },
+  question11: {
+    title:
+      "How do you see the future of the partnership between the county attorney’s office and state attorney general, and when should the two offices join forces?",
+    subject: "Government relations",
+    tellMeMore:
+      "The Hennepin County Attorney’s office and Minnesota Attorney General appear to be working together more than ever before, including filing multiple lawsuits against the federal government during and after Operation Metro Surge.",
+    option1:
+      "Continue working with the state’s top prosecutor as often as possible because partnerships between the Hennepin County attorney and Minnesota attorney general have been necessary and fruitful.",
+    option2:
+      "Focus more of the office’s efforts on local matters because the Hennepin County attorney should not work as closely with the state’s attorney general.",
+    option3:
+      "Limit cooperation to specific instances like suing the federal government, because the Hennepin County attorney and the state’s attorney general should have a good working relationship.",
+    option4: "",
+  },
+};
