@@ -10,7 +10,7 @@ export const questionContent = {
     option2:
       "No, the county attorney should drop the charges against the federal agent.",
     option3:
-      "The county attorney should evaluate the evidence and make my decision only after I am elected.",
+      "The county attorney should evaluate the evidence and make their decision only after they are elected.",
     option4: "",
   },
   question2: {
