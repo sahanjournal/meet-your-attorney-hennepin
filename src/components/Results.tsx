@@ -341,7 +341,7 @@ const Results: React.FC = () => {
                 Ready to hit the polls?
               </div>
               <div className="is-hidden-mobile eyebrow mb-4">
-                {todaysDate < new Date("2026-07-21") ? (
+                {todaysDate < new Date("2026-07-22") ? (
                   <span>Online registration is currently open.</span>
                 ) : (
                   <span>
@@ -354,7 +354,7 @@ const Results: React.FC = () => {
                 Ready to hit the polls?
               </div>
               <div className="is-hidden-tablet eyebrow mt-0 mb-3">
-                {todaysDate < new Date("2026-07-21") ? (
+                {todaysDate < new Date("2026-07-22") ? (
                   <span>Online registration is currently open.</span>
                 ) : (
                   <span>
@@ -377,7 +377,7 @@ const Results: React.FC = () => {
                     <span className="is-hidden-tablet">Check registration</span>
                   </button>
                 </OutboundLink>
-                <OutboundLink to="https://www.hennepincounty.gov/-/media/Hennepin-Headless/Hennepin-Gov/services/elections/voter-guide.pdf">
+                <OutboundLink to="https://sahanjournal.com/news/minnesota-primary-election-2026-how-to-vote/">
                   <button
                     className="button is-link is-white"
                     onClick={() => {
