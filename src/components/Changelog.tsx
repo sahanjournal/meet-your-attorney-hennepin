@@ -6,7 +6,12 @@ import React from "react";
  *
  * NOTE: Please use the <OutboundLink> component for hyperlinks.
  */
-const CHANGELOG_ENTRIES: { date: string; changes: React.ReactNode[] }[] = [];
+const CHANGELOG_ENTRIES: { date: string; changes: React.ReactNode[] }[] = [
+  {
+    date: "July 6, 2026",
+    changes: [<>Anders Folk's answer to question #9 has been corrected.</>],
+  },
+];
 
 export const Changelog = () => {
   if (CHANGELOG_ENTRIES.length > 0)
@@ -20,7 +25,7 @@ export const Changelog = () => {
               <ul className="mt-1">
                 {entry.changes.map((change, i) => (
                   <li className="label is-flex my-0" key={i}>
-                    <div className="mr-2 mt-1">●</div>{" "}
+                    <div className="mr-2">●</div>{" "}
                     <span className="copy has-text-left ml-0 mb-1">
                       {change}
                     </span>
