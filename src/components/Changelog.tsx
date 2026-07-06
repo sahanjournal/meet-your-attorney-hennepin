@@ -6,7 +6,14 @@ import React from "react";
  *
  * NOTE: Please use the <OutboundLink> component for hyperlinks.
  */
-const CHANGELOG_ENTRIES: { date: string; changes: React.ReactNode[] }[] = [];
+const CHANGELOG_ENTRIES: { date: string; changes: React.ReactNode[] }[] = [
+  {
+    date: "July 6, 2026",
+    changes: [
+      <span>Anders Folk's answer to question #9 has been corrected.</span>,
+    ],
+  },
+];
 
 export const Changelog = () => {
   if (CHANGELOG_ENTRIES.length > 0)
