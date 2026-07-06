@@ -31,7 +31,7 @@ export const candidateContent = {
     quizResponse8:
       "0 | This policy debate is a good example of the leadership failures we have seen from the current county attorney’s approach. Law enforcement partners, including the sheriff and police chiefs, were blindsided by the policy and were given no opportunity to provide any input before the policy was implemented. That's not how a community-first leader builds trust.{newParagraph}I am committed to implementing a traffic stop policy that is constitutional, consistent with Minnesota law, and provides law enforcement officers to use their discretion, while never allowing the individual characteristics of driver or passenger to be the basis for a stop or an arrest.",
     quizResponse9:
-      "2 | The governor was right to intervene in this case because the county attorney failed to appropriately handle this matter. The governor’s authority needs to be used sparingly and only in the most egregious cases. I believe this case met that threshold.",
+      "1 | The governor was right to intervene in this case because the county attorney failed to appropriately handle this matter. The governor’s authority needs to be used sparingly and only in the most egregious cases. I believe this case met that threshold.",
     quizResponse10: "2 |",
     quizResponse11: "1 |",
   },
