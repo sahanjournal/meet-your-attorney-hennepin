@@ -39,6 +39,18 @@ const testValidSetOfLinks = (links: any[]) => {
   });
 };
 
+/**
+ * This function uses the browser's built-in HTML parser to decode HTML entities in a string.
+ * For example, it will convert "&amp;" to "&" and "&#8217;" to "'".
+ * This is useful for decoding the titles of articles fetched from the Sahan Journal API, which may contain HTML entities.
+ *
+ */
+function decodeHtml(html: string): string {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}
+
 export const RecentCoverage: React.FC = () => {
   const [links, setLinks] = React.useState(DEFAULT_LINKS);
 
@@ -62,7 +74,11 @@ export const RecentCoverage: React.FC = () => {
             (link: any) =>
               link.href && !link.href.includes(process.env.GATSBY_SLUG),
           )
-          .slice(0, 3);
+          .slice(0, 3)
+          .map((link: any) => ({
+            ...link,
+            text: decodeHtml(link.text),
+          }));
 
         testValidSetOfLinks(filteredLinks);
         return filteredLinks;
