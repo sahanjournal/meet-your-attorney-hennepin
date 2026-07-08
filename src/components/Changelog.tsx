@@ -11,6 +11,24 @@ const CHANGELOG_ENTRIES: { date: string; changes: React.ReactNode[] }[] = [
     date: "July 6, 2026",
     changes: [<>Anders Folk's answer to question #9 has been corrected.</>],
   },
+  {
+    date: "July 8, 2026",
+    changes: [
+      <>
+        Krenz’s biography was updated to correct the county attorney who hired
+        her — Tom Johnson, not Mike Freeman.
+      </>,
+    ],
+  },
+  {
+    date: "July 8, 2026",
+    changes: [
+      <>
+        Frazier’s biography was updated to correct his work role in relation to
+        Mary Moriarty when both worked as public defenders in Hennepin County.
+      </>,
+    ],
+  },
 ];
 
 export const Changelog = () => {
